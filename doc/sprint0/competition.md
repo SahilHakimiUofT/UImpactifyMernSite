@@ -51,11 +51,11 @@ Lastly, we would also like to talk about 5 other competitions U Impactify has to
 - Thinkific (https://www.thinkific.com/) 
 - Alura (https://www.alura.com.br/) 
 
-    Zenler is an all in one course creation, delivery, and marketing platform. Zenler allows users to create courses and sell them for a pricing model of their choice, it has email automations, tracking for students, easy page designer, and more.
+Zenler is an all in one course creation, delivery, and marketing platform. Zenler allows users to create courses and sell them for a pricing model of their choice, it has email automations, tracking for students, easy page designer, and more.
 
-    Teachable allows their users to transform their experience and knowledge into selling courses, building a brand, or a coaching business. You create and sell online courses, the pricing is very expensive such as around $100 for a specific course, track your revenue, live lectures, feedback system, and more. 
+Teachable allows their users to transform their experience and knowledge into selling courses, building a brand, or a coaching business. You create and sell online courses, the pricing is very expensive such as around $100 for a specific course, track your revenue, live lectures, feedback system, and more. 
 
-    Mighty Networks is a software company redefining the way influencers are growing their brands and followers. A new kind of website builder that grows with you. Bring your community, online courses, and memberships together in one place. Building your own brand by creating online courses, being involved with the community, and your own website through the builder feature. The pricing is either $81 or $23 or free per month depending on the plan.
+Mighty Networks is a software company redefining the way influencers are growing their brands and followers. A new kind of website builder that grows with you. Bring your community, online courses, and memberships together in one place. Building your own brand by creating online courses, being involved with the community, and your own website through the builder feature. The pricing is either $81 or $23 or free per month depending on the plan.
 
 Thinkific is a software platform that enables entrepreneurs to create, market, sell, and deliver their own online courses. Their mission is to revolutionize the way people learn and earn online by giving them the tools they need to turn their expertise into a sustainable business that impacts both them and their audience. Multiple multimedia course content, web designer, and multiple courses. The pricing is between $0, $39, $79, $399 per month depending on the plan.
 
