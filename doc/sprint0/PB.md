@@ -22,3 +22,4 @@
 16. As a social organization, I want to be able to post about open positions with the organization so that others can gain skills and learn
 17. As a social organization, I should be able to monitor/evaluate the progress of learning happening in the application so that we are up to date and can think of any changes or ideas needed
 18. As a consultant (teacher), I want to be able to edit courses and create new courses so that I can teach what I know best
+19. As a learner, I want to be able to enroll in a course so I can gain skills in fields that I am interested in
