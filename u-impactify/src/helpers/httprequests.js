@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BASE_ADDRESS } from './constants'
+import { SERVER_BASE_ADDRESS } from './constants'
 
 /*
     Example function call: If you want to send a post request to http://localhost:5000/users/add with data
@@ -7,21 +7,21 @@ import { BASE_ADDRESS } from './constants'
 */
 
 export function GetRequest(endpoint, config) {
-    return axios.get(`${BASE_ADDRESS}${endpoint}`, config)
+    return axios.get(`${SERVER_BASE_ADDRESS}${endpoint}`, config)
 }
 
 export function PostRequest(endpoint, data, config) {
-    return axios.post(`${BASE_ADDRESS}${endpoint}`, data, config)
+    return axios.post(`${SERVER_BASE_ADDRESS}${endpoint}`, data, config)
 }
 
 export function PatchRequest(endpoint, data, config) {
-    return axios.patch(`${BASE_ADDRESS}${endpoint}`, data, config)
+    return axios.patch(`${SERVER_BASE_ADDRESS}${endpoint}`, data, config)
 }
 
 export function PutRequest(endpoint, data, config) {
-    return axios.put(`${BASE_ADDRESS}${endpoint}`, data, config)
+    return axios.put(`${SERVER_BASE_ADDRESS}${endpoint}`, data, config)
 }
 
 export function DeleteRequest(endpoint, config) {
-    return axios.delete(`${BASE_ADDRESS}${endpoint}`, config)
+    return axios.delete(`${SERVER_BASE_ADDRESS}${endpoint}`, config)
 }
