@@ -31,10 +31,9 @@ Product Backlog PB.md and Jira (Max 8 marks)
    do not identify goals, 2 marks = all user stories identify goals]
    Your mark: 2
   -Writing (max 2 marks) [0 marks = writing is poor and with errors, 1 mark = writing is not clear for some stories, 2 marks = writing is very clear for all stories]
-   Your mark: 1
-   Your team missed adding the points allocated to each story as required.
+   Your mark: 2
   
-   PB.md mark: 5
+   PB.md mark: 6
    
 Definition of done: done.md (max 2 marks)
    -Definiton of done is relevant to the project and applies to all stories [2 marks]
@@ -89,6 +88,6 @@ User experience: (max 4 marks)
    User experience mark: 4
    
    
-Total mark for phase 1 : 37/42   
+Total mark for phase 1 : 38/42   
 	
 
