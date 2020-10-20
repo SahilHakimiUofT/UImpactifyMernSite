@@ -17,18 +17,6 @@ import PrivateRoute from './PrivateRoute';
 class App extends Component {
     render() {
         return (
-
-            <Router>
-                <div className="App">
-                    <Route path="/" exact component={homepage} />
-                    <Route path="/about" exact component={about} />
-                    <Route path="/solutions" exact component={solutions} />
-                    <Route path="/pricing" exact component={pricing} />
-                    <Route path="/signup" exact component={signup} />
-                    <Route path="/login" exact component={login} />
-                    <Route path="/consultant" exact component={Consultant} />
-                </div>
-
             <AuthProvider>
                 <Router>
                     <div className="App">
@@ -40,10 +28,9 @@ class App extends Component {
                         <Route path="/signup" exact component={signup} />
                         <Route path="/login" exact component={login} />
                     </div>
-
                 </Router>
             </AuthProvider>
         );
-        }
+    }
 }
 export default App;
