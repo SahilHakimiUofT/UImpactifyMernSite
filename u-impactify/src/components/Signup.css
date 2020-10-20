@@ -1,0 +1,41 @@
+img{
+    max-width: 75%;
+    max-height: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;  
+}
+
+.container{
+    position:relative;
+    margin-top: 2%;
+}
+
+.formsign{
+    margin-left: 15%;
+}
+
+.singupbutton{
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 30%;
+    border: blueviolet;
+    background-color: blueviolet;
+    color: white;
+    text-emphasis: bold;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2%;
+}
+a{
+    color: black;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    padding-left: 5%;
+}

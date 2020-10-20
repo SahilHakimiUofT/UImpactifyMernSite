@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import './footer.css';
+import logo from './UImpactify-logo.png';
 
 export default class Footer extends Component{
     render(){
     return (
-        <FooterContainer className="main-footer">
             <div className="footer-middle">
         <div className="container">
         <div className="row">
         {/* Columns*/}
         <div className="col-md-2 col-sm-5">
-            <ul className="list-unstyled">
+        <img src={logo} class='photo_logo' alt=''></img> 
+        </div>
+        <div className="col-md-2 col-sm-5">
+            <ul className="list-unstyled"> 
                 <li>(email address)</li>
                 <li>(phone number)</li>
                 <li>(address)</li>
@@ -57,20 +60,6 @@ export default class Footer extends Component{
         </div>
         </div>
         </div>
-        </FooterContainer>
     )
 }
 }
-
-const FooterContainer = styled.footer`
-.footer-middle {
-    background: var(--mainDark);
-    padding-top: 3rem;
-    padding-bottom: 1rem;
-    color: var(--mainWhite);
-    bottom: 0px;
-    position: relative;
-    left: 0px;
-    width: 100%
-}
-`;

@@ -1,0 +1,12 @@
+.loginbutton{
+    align-items: center;
+    margin-top: 5%;
+    margin-left: 30%;
+    border: blueviolet;
+    background-color: blueviolet;
+    color: white;
+    text-emphasis: bold;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 2%;
+}
