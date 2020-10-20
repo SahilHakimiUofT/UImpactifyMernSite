@@ -3,6 +3,8 @@ import NavBarHome from './navbarhome.component';
 import Footer from './footer.component';
 import app from "../config/firebase"
 import { withRouter } from 'react-router';
+import singup_photo from '../images/sign.png';
+import './Signup.css';
 
 
 const SignUp = ( { history }) => {
@@ -27,11 +29,11 @@ const SignUp = ( { history }) => {
             <div className="row">
             {/* Columns*/}
             <div className="col-md-5 col-sm-10">
-                <h1>Join the movement,<br />change the World</h1>
-            <ul className="list-unstyled">
-            </ul>
+                <h1>Join the movement,<br />change the World.</h1>
+                <img src={singup_photo} class='photo' alt=''></img>
             </div>
             <div className="col-md-5 col-sm-10">
+                <div class="formsign">
                 <h1>Create An Account</h1>
                 <form onSubmit={handleSignUp}>
                     <label>
@@ -44,43 +46,14 @@ const SignUp = ( { history }) => {
                         <input name="password" type="password" placeholder="password" />
                     </label>
                     <br />
-                    <button type="submit">Sign Up</button>
+                    <p>Already have an account? <a href='/login'>Login</a></p>
+                    <button type="submit" class='singupbutton'>SIGN UP</button>
                 </form>
-                <ul className="list-unstyled">
-                    <li>Email</li>
-                    <br />
-                    <li>Username</li>
-                    <br />
-                    <li>Password</li>
-                    <br />
-                    <li>Are you Joining as a Student or Instructor?</li>
-                    <p>Please select your answer below</p>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-3 col-sm-6">
-                                <ul className="list-unstyled">
-                                    <p>Student</p>
-                                </ul>
-                            </div>
-                            <div className="col-md-3 col-sm-6">
-                                <ul className="list-unstyled">
-                                    <p>Instructor</p>
-                                </ul>
-                            </div>
-                            <div className="col-md-3 col-sm-6">
-                                <ul className="list-unstyled">
-                                    <p>Social Initiatives</p>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </ul>
-                <p>*By sharing your email, you agree to our Offer Terms, Terms of Service and Privacy Policy</p>
-                <br/>
-                <p>Sign Up</p>
+                </div>
             </div>
             </div>
             </div>
+            <br />
             <Footer />
         </div>
     );
