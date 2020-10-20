@@ -1,10 +1,25 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { useCallback } from 'react';
 import NavBarHome from './navbarhome.component';
 import Footer from './footer.component';
+import app from "../config/firebase"
+import { withRouter } from 'react-router';
 
-export default class signup extends Component{
-    render(){
+
+const SignUp = ( { history }) => {
+    const handleSignUp = useCallback(async event => {
+        event.preventDefault();
+        const { email, password } = event.target.elements;
+        try {
+            await app
+                .auth()
+                .createUserWithEmailAndPassword(email.value, password.value);
+            history.push("/homecc");
+        } catch (error)
+        {
+            alert(error);
+        }
+    }, [history] );
+
     return (
         <div className="main-signup">
             <NavBarHome />
@@ -18,6 +33,19 @@ export default class signup extends Component{
             </div>
             <div className="col-md-5 col-sm-10">
                 <h1>Create An Account</h1>
+                <form onSubmit={handleSignUp}>
+                    <label>
+                        Email <br />
+                        <input name="email" type="email" placeholder="" />
+                    </label>
+                    <br />
+                    <label>
+                        Password <br />
+                        <input name="password" type="password" placeholder="password" />
+                    </label>
+                    <br />
+                    <button type="submit">Sign Up</button>
+                </form>
                 <ul className="list-unstyled">
                     <li>Email</li>
                     <br />
@@ -55,6 +83,7 @@ export default class signup extends Component{
             </div>
             <Footer />
         </div>
-    )
-    }
-}
+    );
+};
+
+export default withRouter(SignUp);
