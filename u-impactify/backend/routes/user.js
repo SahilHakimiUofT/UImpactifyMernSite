@@ -1,16 +1,27 @@
 const router = require('express').Router();
 let User = require('../models/user.model');
 
-router.route('/').get((req, res) => {
-    User.find()
-        .then(users => res.json(users))
+router.route('/get/:id').get((req, res) => {
+    User.findById(req.params.id)
+        .then(user => res.json(user))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/add').post((req, res) => {
-    const username = req.body.username;
+    const userName = req.body.userName;
     const userType = req.body.userType;
-    const newUser = new User({username, userType});
+    const email = req.body.email;
+    const phoneNumber = req.body.phoneNumber;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const skills = req.body.skill;
+    const completedCourses = req.body.completedCourses;
+    const languages = req.body.languages;
+    const description = req.body.description;
+
+
+    const newUser = new User({userName, userType, email, phoneNumber, firstName, lastName,
+                              skills, completedCourses, languages, description});
 
     newUser.save()
         .then(() => res.json('User Added'))
@@ -24,11 +35,19 @@ router.route('/delete/:id').delete((req, res) => {
 });
 
 router.route('/update/:id').post((req, res) => {  
-    User.findByIdAndUpdate(req.params.id)
+    User.findById(req.params.id)
         .then(user => {
-            user.username = req.body.username;
+            user.userName = req.body.userName;
             user.userType = req.body.userType;
-
+            user.email = req.body.email;
+            user.phoneNumber = req.body.phoneNumber;
+            user.firstName = req.body.firstName;
+            user.lastName = req.body.lastName;
+            user.skills = req.body.skills;
+            user.completedCourses = req.body.completedCourses;
+            user.languages = req.body.languages;
+            user.description = req.body.description;
+    
             user.save()
                 .then(() => res.json('User Updated'))
                 .catch(err => res.status(400).json('Error'));
