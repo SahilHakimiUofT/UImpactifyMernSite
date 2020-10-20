@@ -23,7 +23,7 @@ router.route('/delete/:id').delete((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/update/:id').post((req, res) => {
+router.route('/update/:id').post((req, res) => {  
     User.findByIdAndUpdate(req.params.id)
         .then(user => {
             user.username = req.body.username;
