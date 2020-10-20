@@ -8,13 +8,27 @@ import solutions from "./components/solutions.component"
 import pricing from "./components/pricing.component"
 import signup from './components/signup.component';
 import login from './components/login'
+import Consultant from './components/consultant'
 import homecc from './components/homecc'
 import { AuthProvider } from './Auth';
 import PrivateRoute from './PrivateRoute';
 
+
 class App extends Component {
     render() {
         return (
+
+            <Router>
+                <div className="App">
+                    <Route path="/" exact component={homepage} />
+                    <Route path="/about" exact component={about} />
+                    <Route path="/solutions" exact component={solutions} />
+                    <Route path="/pricing" exact component={pricing} />
+                    <Route path="/signup" exact component={signup} />
+                    <Route path="/login" exact component={login} />
+                    <Route path="/consultant" exact component={Consultant} />
+                </div>
+
             <AuthProvider>
                 <Router>
                     <div className="App">
@@ -26,6 +40,7 @@ class App extends Component {
                         <Route path="/signup" exact component={signup} />
                         <Route path="/login" exact component={login} />
                     </div>
+
                 </Router>
             </AuthProvider>
         );
