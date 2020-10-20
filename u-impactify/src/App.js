@@ -12,6 +12,7 @@ import signup from './components/signup.component';
 import { render } from 'react-dom';
 import firebase from './config/firebase';
 import login from './components/login'
+import Consultant from './components/consultant'
 
 class App extends Component {
     constructor(props){
@@ -48,6 +49,7 @@ class App extends Component {
                     <Route path="/pricing" exact component={pricing} />
                     <Route path="/signup" exact component={signup} />
                     <Route path="/login" exact component={login} />
+                    <Route path="/consultant" exact component={Consultant} />
                 </div>
                 </Router>
         );
