@@ -1,0 +1,9 @@
+.lmain{
+   min-height: 100vh;
+   position: relative;
+}
+
+.footer {
+   position: sticky;
+   margin-top: 15rem;
+}

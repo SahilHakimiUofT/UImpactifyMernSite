@@ -9,6 +9,7 @@ import pricing from "./components/pricing.component"
 import signup from './components/signup.component';
 import login from './components/login'
 import Consultant from './components/consultant'
+import Learner from './components/learner'
 import homecc from './components/homecc'
 import { AuthProvider } from './Auth';
 import PrivateRoute from './PrivateRoute';
@@ -28,6 +29,7 @@ class App extends Component {
                         <Route path="/signup" exact component={signup} />
                         <Route path="/login" exact component={login} />
                         <Route path="/consultant" exact component={Consultant} />
+                        <Route path="/learner" exact component={Learner} />
                     </div>
                 </Router>
             </AuthProvider>
