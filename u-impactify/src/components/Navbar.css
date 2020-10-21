@@ -17,10 +17,10 @@
     width: 210px;
     display: flex;
     justify-content: center;
-    position: absolute;
+    position: relative;
     left: 0;
-    margin: 0 auto 100px 0;
-    position: absolute;
+    margin: 0 auto 200px 0;
+    
     
 }
 
@@ -67,6 +67,7 @@ ul {
     padding-right: 5px;
     align-items: center;
     text-align: center;
+
 }
 
 span {

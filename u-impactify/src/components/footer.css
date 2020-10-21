@@ -1,11 +1,12 @@
 .footer-middle{
-    background: whitesmoke;
-    padding-top: 3rem;
-    padding-bottom: 1rem;
+    
+    background-color: whitesmoke;
     color: black;
     bottom: 0px;
     left: 0px;
-    width: 100%
+    width: 100%;
+    position: absolute;
+    height: 15rem;
 }
 
 .photo_logo{
