@@ -18,10 +18,11 @@ router.route('/add').post((req, res) => {
     const completedCourses = req.body.completedCourses;
     const languages = req.body.languages;
     const description = req.body.description;
+    const education = req.body.education;
 
 
     const newUser = new User({userName, userType, email, phoneNumber, firstName, lastName,
-                              skills, completedCourses, languages, description});
+                              skills, completedCourses, languages, description, education});
 
     newUser.save()
         .then(() => res.json('User Added'))
@@ -45,6 +46,7 @@ router.route('/update/:id').post((req, res) => {
             user.completedCourses = req.body.completedCourses;
             user.languages = req.body.languages;
             user.description = req.body.description;
+            user.education = req.body.education;
     
             user.save()
                 .then(() => res.json('User Updated'))

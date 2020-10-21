@@ -13,6 +13,7 @@ const userSchema = new Schema({
     completedCourses: String,
     languages: String,
     description: String,
+    education: String, 
 });
 
 const User = mongoose.model('User', userSchema);
