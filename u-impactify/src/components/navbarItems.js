@@ -17,7 +17,7 @@ export const navbarItems = [
         cName: 'nav-text'
     }, {
         title: 'Profile',
-        path: '/profile',
+        path: '/profile-consultant',
         icon: <AiIcons.AiFillProfile />,
         cName: 'nav-text'
     }, {
