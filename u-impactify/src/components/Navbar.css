@@ -2,13 +2,27 @@
     background-color: #FCFCFA;
 }
 
+.dashboard {
+    color:#FFFFFF;
+    justify-content: start;
+    align-items: center;
+    margin-left: 270px;
+    margin-top: 0px;
+    padding: 0px;
+    width: 290px;
+    display: flex;
+}
+
 .top-navbar {
-    background-color: #FFFFFF;
+    background-color:#A78EC3;
     height: 80px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: auto;
 }
+
+
 
 .nav-menu {
     background-color:#FFFFFF;
@@ -19,7 +33,7 @@
     justify-content: center;
     position: relative;
     left: 0;
-    margin: 0 auto 200px 0;
+    margin: -525px auto 200px 0;
     
     
 }
@@ -76,4 +90,24 @@ span {
 
 .logo {
     margin-top: 15px;
+}
+.profile-pic{
+    width: 50px;
+    position: relative;
+    left:760px;
+}
+
+.profile-link{
+    position: relative;
+    left:780px;
+    color:#FFFFFF;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    
+}
+
+.profile-link:hover{
+    color:black;
+    text-decoration: none;
 }
