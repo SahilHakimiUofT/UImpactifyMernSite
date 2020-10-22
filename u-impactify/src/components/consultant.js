@@ -11,9 +11,6 @@ export default class Consultant extends Component{
               <div className = 'content-wrap'>
               <div className='top-navbar'>
                 <h1 className = "dashboard">Dashboard</h1>
-                
-                <CgIcons.CgProfile size={50} className = 'profile-pic'/>
-               <Link to='./profile' className="profile-link"><h3 >Profile</h3></Link>
                 </div>
                 
                 <h1 className = "calendar">Calendar</h1>  
