@@ -6,7 +6,7 @@ import * as IoIcons from 'react-icons/io';
 export const navbarItems = [
     {
         title: 'Home',
-        path: '/',
+        path: '/dashboard',
         icon: <AiIcons.AiFillHome />,
         cName: 'nav-text'
     },
@@ -17,7 +17,7 @@ export const navbarItems = [
         cName: 'nav-text'
     }, {
         title: 'Profile',
-        path: '/profile',
+        path: '/profile-consultant',
         icon: <AiIcons.AiFillProfile />,
         cName: 'nav-text'
     }, {
@@ -32,7 +32,7 @@ export const navbarItems = [
         cName: 'nav-text'
     }, {
         title: 'Logout',
-        path: '/logout',
+        path: '/',
         icon: <AiIcons.AiOutlineLogout />,
         cName: 'nav-text'
     },

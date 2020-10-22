@@ -2,11 +2,12 @@ import React from 'react'
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
+import app from '../config/firebase';
 
 export const learnerItems = [
     {
         title: 'Dashboard',
-        path: '/',
+        path: '/dashboard',
         icon: <AiIcons.AiFillHome />,
         cName: 'lnav-text'
     },
@@ -17,7 +18,7 @@ export const learnerItems = [
         cName: 'lnav-text'
     }, {
         title: 'Profile',
-        path: '/profile',
+        path: '/profile-learner',
         icon: <AiIcons.AiFillProfile />,
         cName: 'lnav-text'
     }, {
@@ -37,7 +38,7 @@ export const learnerItems = [
         cName: 'lnav-text'
     }, {
         title: 'Logout',
-        path: '/logout',
+        path: '/',
         icon: <AiIcons.AiOutlineLogout />,
         cName: 'lnav-text'
     },

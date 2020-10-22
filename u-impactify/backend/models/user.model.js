@@ -14,6 +14,7 @@ const userSchema = new Schema({
     completedCourses: String,
     languages: String,
     description: String,
+    profilePicUrl: String,
     education: String, 
 });
 
