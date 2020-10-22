@@ -8,6 +8,7 @@ import signup from './components/signup.component';
 import login from './components/login'
 import Consultant from './components/consultant'
 import Learner from './components/learner'
+import SocialInitiative from './components/socialInitDashboard';
 import { AuthProvider, AuthContext } from './Auth';
 import PrivateRoute from './PrivateRoute';
 import { Test } from './components/test'
@@ -21,6 +22,8 @@ const DashboardRoute = () => {
     component = Learner;
   } else if (userType === 'consultant') {
     component = Consultant;
+  } else if(userType === 'organization'){
+    component = SocialInitiative;
   }
 
   return (
