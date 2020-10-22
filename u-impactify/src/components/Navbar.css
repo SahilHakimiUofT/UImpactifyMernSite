@@ -8,13 +8,13 @@
 .nav-menu {
     background-color:#FFFFFF;
     padding-left: 0;
-   
     width: 210px;
     display: flex;
     justify-content: center;
     position: relative;
     left: 0;
-    margin: -525px auto 200px 0;
+    bottom:510px ;
+    margin: 0px auto 0 0;
     
     
 }

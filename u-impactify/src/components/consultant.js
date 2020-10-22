@@ -15,8 +15,12 @@ export default class Consultant extends Component{
                 <CgIcons.CgProfile size={50} className = 'profile-pic'/>
                <Link to='./profile' className="profile-link"><h3 >Profile</h3></Link>
                 </div>
-
+                
+                <h1 className = "calendar">Calendar</h1>  
+                <h1 className = "classes">Your Classes</h1>
                 <Navbar />
+                
+              
                 <div className = 'Foot'>
                 <Footer />
                 </div>

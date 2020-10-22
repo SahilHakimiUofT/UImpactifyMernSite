@@ -11,11 +11,6 @@ export default class Navbar extends Component {
     render() {
         return (
             <body>
-
-                <h1 className = "calendar">Calendar</h1>  
-                <h1 className = "classes">Your Classes</h1>
-                
-
                 <nav className='nav-menu'>
                     <ul className='nav-menu-items'>
                         <li>
