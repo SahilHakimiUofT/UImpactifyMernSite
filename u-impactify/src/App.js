@@ -8,12 +8,25 @@ import signup from './components/signup.component';
 import login from './components/login'
 import Consultant from './components/consultant'
 import Learner from './components/learner'
-import { AuthProvider } from './Auth';
+import { AuthProvider, AuthContext } from './Auth';
 import PrivateRoute from './PrivateRoute';
 import { Test } from './components/test'
+
+const DashboardRoute = () => {
+  const { userType } = React.useContext(AuthContext);
+  let component = null;
+  if (userType === 'learner') {
+    component = Learner;
+  } else if (userType === 'consultant') {
+    component = Consultant;
+  }
+
+  return (
+    <Route path="/dashboard" exact component={component} />
+  )
+}
+
 class App extends Component {
-
-
     render() {
         return (
             <AuthProvider>
@@ -24,8 +37,7 @@ class App extends Component {
                         <Route path="/about" exact component={about} />
                         <Route path="/signup" exact component={signup} />
                         <Route path="/login" exact component={login} />
-                        <Route path="/consultant" exact component={Consultant} />
-                        <Route path="/learner" exact component={Learner} />
+                        <DashboardRoute />
                     </div>
                 </Router>
             </AuthProvider>

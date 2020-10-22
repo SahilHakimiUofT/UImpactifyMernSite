@@ -9,8 +9,6 @@ import './login.css';
 
 
 const Login = ({history}) => {
-    //const {currentUserId, setCurrentUserId} = useContext(UserContext);
-
     const handleLogin = useCallback(
         async event => {
             event.preventDefault();
@@ -20,13 +18,14 @@ const Login = ({history}) => {
                 await app
                     .auth()
                     .signInWithEmailAndPassword(email.value, password.value);
-                fetch(`http://localhost:5000/users/${email.value}`, {
+                await fetch(`http://localhost:5000/users/${email.value}`, {
                     method: 'GET',
                 })
                 .then(response => response.json())
+                .then(data => setUserType(data.userType))
                 //.then(data => setCurrentUserId(data.email));
                 //console.log(currentUserId);
-                history.push("/homecc");
+                history.push("/dashboard");
             }
             catch (error) {
                 alert(error); 
@@ -34,10 +33,11 @@ const Login = ({history}) => {
         }, [history]
     );
 
-    const { currentUser } = useContext(AuthContext);
-    if (currentUser)
+    const { currentUser, setUserType, userType } = useContext(AuthContext) || {};
+    if (currentUser && userType)
     {
-        return <Redirect to="/homecc"/>
+      console.log(currentUser);
+        return <Redirect to="/dashboard"/>
     }
 
     return (

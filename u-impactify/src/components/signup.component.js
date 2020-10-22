@@ -5,17 +5,18 @@ import app from "../config/firebase"
 import { withRouter } from 'react-router';
 import singup_photo from '../images/sign.png';
 import './Signup.css';
+import { AuthContext } from '../Auth';
 
 
 const SignUp = ( { history }) => {
-
+    const { setUserType } = React.useContext(AuthContext);
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
         const { _id, password, type } = event.target.elements;
 
         console.log(_id.value);
         console.log(type.value);
-
+        setUserType(type.value);
         let databody = {
             "_id": _id.value,
             "userType": type.value,
@@ -38,7 +39,7 @@ const SignUp = ( { history }) => {
             })
             .then(res => res.json())
             .then(data => console.log(data));
-            history.push("/homecc");
+            history.push("/dashboard");
         } catch (error)
         {
             alert(error);
