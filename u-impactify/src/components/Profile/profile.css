@@ -1,10 +1,7 @@
 .main{
   min-height: 100vh;
   position: relative;
-}
-
-.content-wrap{
-  padding-bottom: 30%;
+  min-width: 960px;
 }
 
 .padding {
@@ -44,4 +41,9 @@
 
 .below {
   margin-top: 15px;
+}
+
+.btn-save {
+  margin-top: 100px;
+  margin-left: 5px;
 }

@@ -18,7 +18,7 @@ export const learnerItems = [
         cName: 'lnav-text'
     }, {
         title: 'Profile',
-        path: '/profile-learner',
+        path: '/profile',
         icon: <AiIcons.AiFillProfile />,
         cName: 'lnav-text'
     }, {

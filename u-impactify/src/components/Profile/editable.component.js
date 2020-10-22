@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import "./editable.css"
 
 export default function Editable(props) {
   const [value, setValue] = useState(props.content)
@@ -25,18 +26,15 @@ export default function Editable(props) {
     setEdit(false)
     setValue(text)
     props.updateField(text)
-    props.updateDatabase()
   }
 
   const editView = () => {
     return (
-      <div>
-        <form onSubmit={onSubmit}>
-          <input type='text' defaultValue={value} onChange={(e) => setText(e.target.value)}/>
-          <button onClick={changeEditMode}>X</button>
-          <input type='submit' value='OK' />
-        </form>
-      </div>
+      <form onSubmit={onSubmit} className="form-group">
+        <input type='text' defaultValue={value} onChange={(e) => setText(e.target.value)} className="form-control textbox"/>
+        <button className="btn btn-secondary" onClick={changeEditMode}>X</button>
+        <input type='submit' value='OK' className="btn btn-primary"/>
+      </form>
     )
   }
 

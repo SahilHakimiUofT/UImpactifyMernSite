@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Editable from './editable.component'
 import { Grid } from '@material-ui/core'
 import Footer from '../footer.component'
-import LearnerProfileBar from './learner-profile-navbar.component'
+import ProfileBar from './profile-navbar.component'
 import "./profile.css"
 import { GetRequest, PostRequest } from '../../helpers/httprequests'
 import { AuthContext } from '../../Auth'
@@ -11,18 +11,27 @@ import {
   DEFAULT_PROFILE_PIC,
 } from "../../helpers/constants";
 
-export default class LearnerProfile extends Component {
+export default class Profile extends Component {
   constructor(props) {
     super(props);
 
     this.updateDatabase = this.updateDatabase.bind(this);
     this.generalInfo = this.generalInfo.bind(this);
     this.personalInfo = this.personalInfo.bind(this);
+    this.updateFirstName = this.updateFirstName.bind(this);
+    this.updateLastName = this.updateLastName.bind(this);
+    this.updateDescription = this.updateDescription.bind(this);
+    this.updateEducation = this.updateEducation.bind(this);
+    this.updateEmail = this.updateEmail.bind(this);
+    this.updateLanguages = this.updateLanguages.bind(this);
+    this.updatePhoneNumber = this.updatePhoneNumber.bind(this);
+    this.updateSkills = this.updateSkills.bind(this);
     this.editImage = this.editImage.bind(this);
     this.deleteImage = this.deleteImage.bind(this);
 
     this.state = {
       id: '',
+      userType: '',
       firstName: '',
       lastName: '',
       email: '',
@@ -38,12 +47,13 @@ export default class LearnerProfile extends Component {
 
   componentDidMount() {
     let userId = this.context.currentUser.email;
-    console.log(userId);
 
     GetRequest('users/' + userId)
       .then(response => {
+        console.log(response)
         this.setState({
           id: userId,
+          userType: response.data.userType,
           firstName: response.data.firstName,
           lastName: response.data.lastName,
           email: response.data.email,
@@ -70,13 +80,54 @@ export default class LearnerProfile extends Component {
       skills: this.state.skills,
       completedCourses: this.state.completedCourses,
       description: this.state.description,
-      languages: this.state.languages
+      languages: this.state.languages,
+      education: this.state.education
     }
 
     PostRequest('users/update/' + this.state.id, user)
       .then(res => console.log(res.data))
   }
 
+  updateFirstName(value) {
+    this.setState({ firstName: value })
+  }
+
+  updateLastName(value) {
+    this.setState({ lastName: value })
+  }
+
+  updateEducation(value) {
+    this.setState({ education: value })
+  }
+
+  updateSkills(value) {
+    this.setState({ skills: value })
+  }
+
+  updateLanguages(value) {
+    this.setState({ languages: value })
+  }
+
+  updateDescription(value) {
+    this.setState({ description: value })
+  }
+
+  updateEmail(value) {
+    this.setState({ email: value })
+  }
+
+  updatePhoneNumber(value) {
+    this.setState({ phoneNumber: value })
+  }
+
+  coursesComponent() {
+    return (
+      <React.Fragment>
+        <h5>Completed Course</h5>
+        <div>{this.state.completedCourses === '' ? "none" : this.state.completedCourses}&nbsp;</div> 
+      </React.Fragment>
+    )
+  }
   editImage(image) {
     if (image) {
       var myHeaders = new Headers();
@@ -111,22 +162,21 @@ export default class LearnerProfile extends Component {
     return (
       <Grid item className="padding">
         <img className="small-image" src={this.state.imageUrl || DEFAULT_PROFILE_PIC} alt="" />
-        <h4 className="info-title">{this.state.firstName + " " + this.state.lastName}</h4>
+        <h4 className="info-title">{this.state.firstName === "" && this.state.lastName == "" ? "name not set" : this.state.firstName + " " + this.state.lastName}</h4>
         <hr/>
         <h5>Education</h5>
-        <Editable content={this.state.education} updateDatabase={this.updateDatabase} updateField={(value) => this.setState({ education: value})}/>
+        <Editable content={this.state.education} updateField={this.updateEducation}/>
         &nbsp;
         <h5>Skills</h5>
-        <Editable content={this.state.skills} updateDatabase={this.updateDatabase} updateField={(value) => this.setState({ skills: value})}/>
+        <Editable content={this.state.skills} updateField={this.updateSkills}/>
         &nbsp;
-        <h5>Completed Course</h5>
-        <div>{this.state.completedCourses}&nbsp;</div>
+        {this.state.userType === 'learner' ? this.coursesComponent() : ""}
         &nbsp;
         <h5>Languages</h5>
-        <Editable content={this.state.languages} updateDatabase={this.updateDatabase} updateField={(value) => this.setState({ languages: value})}/>
+        <Editable content={this.state.languages} updateField={this.updateLanguages}/>
         &nbsp;
         <h5>Description</h5>
-        <Editable content={this.state.description} updateDatabase={this.updateDatabase} updateField={(value) => this.setState({ description: value})}/>
+        <Editable content={this.state.description} updateField={this.updateDescription}/>
       </Grid>
     )
   }
@@ -139,10 +189,10 @@ export default class LearnerProfile extends Component {
         <Grid container direction="row" justify="center">
           <Grid xs container direction="column">
             <h5>First Name</h5>
-            <Editable content={this.state.firstName} updateDatabase={this.updateDatabase} updateField={(value) => this.setState({ firstName: value})}/>
+            <Editable content={this.state.firstName} updateField={this.updateFirstName}/>
             &nbsp;
             <h5>Email Address</h5>
-            <Editable content={this.state.email} updateDatabase={this.updateDatabase} updateField={(value) => this.setState({ email: value})}/>
+            <Editable content={this.state.email} updateField={this.updateEmail}/>
             &nbsp;
             <h5>Picture</h5>
             <Grid item container alignItems='center'>
@@ -177,10 +227,10 @@ export default class LearnerProfile extends Component {
           </Grid>
           <Grid xs container direction="column">
             <h5>Last Name</h5>
-            <Editable content={this.state.lastName} updateDatabase={this.updateDatabase} updateField={(value) => this.setState({ lastName: value})}/>
+            <Editable content={this.state.lastName} updateField={this.updateLastName}/>
             &nbsp;
             <h5>Phone number</h5>
-            <Editable content={this.state.phoneNumber} updateDatabase={this.updateDatabase} updateField={(value) => this.setState({ phoneNumber: value})}/>
+            <Editable content={this.state.phoneNumber} updateField={this.updatePhoneNumber}/>
           </Grid>
         </Grid>
       </div>
@@ -193,10 +243,13 @@ export default class LearnerProfile extends Component {
         <div className="content-wrap">
           <Grid container direction="row">
             <Grid item>
-              <LearnerProfileBar/>
+              <ProfileBar userType={this.state.userType}/>
             </Grid>
             <Grid xs container direction="column">
               {this.generalInfo()}
+              <Grid item>
+                <button className="btn btn-primary btn-save" onClick={this.updateDatabase}>Save</button>
+              </Grid>
             </Grid>
             <Grid xs container direction="column">
               {this.personalInfo()}
@@ -209,4 +262,4 @@ export default class LearnerProfile extends Component {
   }  
 }
 
-LearnerProfile.contextType = AuthContext;
+Profile.contextType = AuthContext;
