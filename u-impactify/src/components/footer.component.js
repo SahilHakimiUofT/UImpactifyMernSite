@@ -5,6 +5,7 @@ import logo from './UImpactify-logo.png';
 export default class Footer extends Component{
     render(){
     return (
+        <footer className='footer-bottom'>
             <div className="footer-middle">
         <div className="container">
         <div className="row">
@@ -60,6 +61,7 @@ export default class Footer extends Component{
         </div>
         </div>
         </div>
+        </footer>
     )
 }
 }

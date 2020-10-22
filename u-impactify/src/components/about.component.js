@@ -8,7 +8,10 @@ export default class login extends Component{
     render(){
         return(
             <div className="TitleHeader">
+                <div className = 'content-wrap'>
+                <div class="main-body">
                 <NavBarHome />
+                <br />
                 <h1>About U-Impactify</h1>
                 <br />
                 <img src={about_photo} class='photo1' alt=''></img>
@@ -36,6 +39,7 @@ export default class login extends Component{
                     <div className="col-md-2 col-sm-2">
                     <h4>Instructors</h4>
                     <p></p>
+                    <br />
                     <ul className="list-unstyled">
                             <li>Help instructors get more clients</li>
                             <li>Help instructors to create and manage their courses</li>
@@ -50,7 +54,9 @@ export default class login extends Component{
                 </div>
                 <p>Request and instant demo</p>
                 <br />
-                <Footer />
+                </div>
+                <div class="footer-bottom"><Footer /></div>
+                </div>
             </div>
         )
     }

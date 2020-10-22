@@ -4,8 +4,6 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import homepage from "./components/homepage.component"
 import about from "./components/about.component"
-import solutions from "./components/solutions.component"
-import pricing from "./components/pricing.component"
 import signup from './components/signup.component';
 import login from './components/login'
 import Consultant from './components/consultant'
@@ -24,8 +22,6 @@ class App extends Component {
                         <PrivateRoute exact path='/homecc' component={homecc} />
                         <Route path="/" exact component={homepage} />
                         <Route path="/about" exact component={about} />
-                        <Route path="/solutions" exact component={solutions} />
-                        <Route path="/pricing" exact component={pricing} />
                         <Route path="/signup" exact component={signup} />
                         <Route path="/login" exact component={login} />
                         <Route path="/consultant" exact component={Consultant} />

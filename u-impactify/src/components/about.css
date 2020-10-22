@@ -27,3 +27,16 @@ img{
 h1{
     padding-top:25px;
 }
+
+.main-body{
+    min-height: 100vh;
+}
+
+.footer-bottom{
+    bottom: 0px;
+    left: 0px;
+}
+
+.content-wrap{
+    padding-bottom: 15 rem;
+ }

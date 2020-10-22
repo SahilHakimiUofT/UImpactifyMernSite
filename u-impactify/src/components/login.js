@@ -64,8 +64,8 @@ const Login = ({history}) => {
             </div>
             </div>
             <br />
-            <Footer />
         </div>
+        <Footer />
         </div>
     );
 };
