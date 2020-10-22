@@ -8,13 +8,36 @@ import './Signup.css';
 
 
 const SignUp = ( { history }) => {
+
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
-        const { email, password } = event.target.elements;
+        const { _id, password, type } = event.target.elements;
+
+        console.log(_id.value);
+        console.log(type.value);
+
+        let databody = {
+            "_id": _id.value,
+            "userType": type.value,
+            "email": _id.value
+        }
+
+        console.log(databody);
+
         try {
             await app
                 .auth()
-                .createUserWithEmailAndPassword(email.value, password.value);
+                .createUserWithEmailAndPassword(_id.value, password.value);
+            
+            fetch('http://localhost:5000/users/add', {
+                method: 'POST',
+                body: JSON.stringify(databody),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => res.json())
+            .then(data => console.log(data));
             history.push("/homecc");
         } catch (error)
         {
@@ -38,14 +61,22 @@ const SignUp = ( { history }) => {
                 <form onSubmit={handleSignUp}>
                     <label>
                         Email <br />
-                        <input name="email" type="email" placeholder="" />
+                        <input name="_id" type="email" placeholder="Enter email" />
                     </label>
                     <br />
                     <label>
                         Password <br />
-                        <input name="password" type="password" placeholder="password" />
+                        <input name="password" type="password" placeholder="Enter Password" />
                     </label>
                     <br />
+                    <label>
+                        User Type <br />
+                        <select name="type">
+                            <option value={'learner'}>Impact Learner</option>
+                            <option value={'consultant'}>Consultant</option>
+                            <option value={'organization'}>Social Initiative</option>
+                        </select>
+                    </label>
                     <p>Already have an account? <a href='/login'>Login</a></p>
                     <button type="submit" class='singupbutton'>SIGN UP</button>
                 </form>

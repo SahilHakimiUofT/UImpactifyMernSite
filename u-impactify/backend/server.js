@@ -4,8 +4,21 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 
+
 const app = express();
 const port = process.env.PORT || 5000;
+
+global.bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({
+  extended: true,
+  limit: '50mb',
+  parameterLimit: 100000
+}))
+app.use(bodyParser.json({
+  limit: '50mb',
+  parameterLimit: 100000
+}))
 
 app.use(cors());
 app.use(express.json());

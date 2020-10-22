@@ -14,9 +14,10 @@ export default class homepage extends Component{
                 <NavBarHome />
                 <div className="body">
                     <h1>An Online learning Platform for social entrepreneurs and intrapreneurs</h1>
-                    <img src={home_photo} class='home_photo' alt=''></img>
-                    <div class="starting">
-                    <a href="/signup" class="start">Get Started</a>
+                    <img src={home_photo} className='home_photo' alt=''></img>
+                    <div className="starting">
+                        <br />
+                    <a href="/signup" className="start">Get Started</a>
                     <br/>
                     </div>
                     <p>Request and instant demo</p>
@@ -25,7 +26,7 @@ export default class homepage extends Component{
                         <div className="container">
                         <div className="row">
                         <div className="col-md-3 col-sm-6">
-                        <img src={speclized} class='photos_2' alt=''></img>
+                        <img src={speclized} className='photos_2' alt=''></img>
                         <h4>Specialized</h4>
                         <p></p>
                         <ul className="list-unstyled">
@@ -33,7 +34,7 @@ export default class homepage extends Component{
                         </ul>
                         </div>
                         <div className="col-md-3 col-sm-6">
-                        <img src={garden} class='photos_2' alt=''></img>
+                        <img src={garden} className='photos_2' alt=''></img>
                         <h4>The Giving Garden</h4>
                         <p></p>
                         <ul className="list-unstyled">
@@ -41,7 +42,7 @@ export default class homepage extends Component{
                         </ul>
                         </div>
                         <div className="col-md-3 col-sm-6">
-                        <img src={resources} class='photos_2' alt=''></img>
+                        <img src={resources} className='photos_2' alt=''></img>
                             <h4>Resources</h4>
                             <p></p>
                             <ul className="list-unstyled">
@@ -51,8 +52,8 @@ export default class homepage extends Component{
                         </div>
                         </div>
                     </div>
-                    <div class="starting">
-                            <a href="/about" class="start">Learn More About What U-Impactify Does</a>
+                    <div className="starting">
+                            <a href="/about" className="start">Learn More About What U-Impactify Does</a>
                             <br/>
                         </div>
                 </div>

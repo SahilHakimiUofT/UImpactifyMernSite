@@ -7,15 +7,25 @@ import NavBarHome from './navbarhome.component';
 import login_photo from '../images/login_page.png';
 import './login.css';
 
+
 const Login = ({history}) => {
+    //const {currentUserId, setCurrentUserId} = useContext(UserContext);
+
     const handleLogin = useCallback(
         async event => {
             event.preventDefault();
             const { email, password } = event.target.elements;
+            console.log(`http://localhost:5000/users/${email.value}`);
             try {
                 await app
                     .auth()
                     .signInWithEmailAndPassword(email.value, password.value);
+                fetch(`http://localhost:5000/users/${email.value}`, {
+                    method: 'GET',
+                })
+                .then(response => response.json())
+                //.then(data => setCurrentUserId(data.email));
+                //console.log(currentUserId);
                 history.push("/homecc");
             }
             catch (error) {
@@ -27,7 +37,7 @@ const Login = ({history}) => {
     const { currentUser } = useContext(AuthContext);
     if (currentUser)
     {
-        return <Redirect to="/homecc" />
+        return <Redirect to="/homecc"/>
     }
 
     return (
@@ -71,4 +81,3 @@ const Login = ({history}) => {
 };
 
 export default withRouter(Login);
-

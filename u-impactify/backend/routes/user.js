@@ -8,21 +8,22 @@ router.route('/:id').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const userName = req.body.userName;
+    const _id = req.body._id
     const userType = req.body.userType;
     const email = req.body.email;
-    const phoneNumber = req.body.phoneNumber;
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const skills = req.body.skills;
-    const completedCourses = req.body.completedCourses;
-    const languages = req.body.languages;
-    const description = req.body.description;
-    const education = req.body.education;
+    const userName = req.body.email;
+    const phoneNumber = "";
+    const firstName = "";
+    const lastName = "";
+    const skills = "";
+    const completedCourses = "";
+    const languages = "";
+    const description = "";
+    const education = "";
 
-
-    const newUser = new User({userName, userType, email, phoneNumber, firstName, lastName,
-                              skills, completedCourses, languages, description, education});
+    const newUser = new User({_id, userName, userType, email, phoneNumber, firstName, lastName,
+        skills, completedCourses, languages, description, education});
+    
 
     newUser.save()
         .then(() => res.json('User Added'))

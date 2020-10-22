@@ -49,6 +49,7 @@ export default class login extends Component{
                     </div>
                 </div>
                 <div class="starting">
+                    <br />
                 <a href="/signup" class="start">Get Started</a>
                 <br/>
                 </div>
