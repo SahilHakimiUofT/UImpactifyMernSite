@@ -7,6 +7,10 @@ import "./profile.css"
 import { GetRequest, PostRequest } from '../../helpers/httprequests'
 import { AuthContext } from '../../Auth'
 import axios from 'axios'
+import {
+  IMGUR_CLIENT_ID,
+  DEFAULT_PROFILE_PIC,
+} from "../../helpers/constants";
 
 export default class ConsultantProfile extends Component {
   constructor(props) {
@@ -15,6 +19,8 @@ export default class ConsultantProfile extends Component {
     this.updateDatabase = this.updateDatabase.bind(this);
     this.generalInfo = this.generalInfo.bind(this);
     this.personalInfo = this.personalInfo.bind(this);
+    this.editImage = this.editImage.bind(this);
+    this.deleteImage = this.deleteImage.bind(this);
 
     this.state = {
       id: '',
@@ -26,7 +32,8 @@ export default class ConsultantProfile extends Component {
       completedCourses: '',
       description: '',
       languages: '',
-      education: ''
+      education: '',
+      imageUrl: DEFAULT_PROFILE_PIC,
     }
   }
 
@@ -46,24 +53,13 @@ export default class ConsultantProfile extends Component {
           completedCourses: response.data.completedCourses,
           description: response.data.description,
           languages: response.data.languages,
-          education: response.data.education
+          education: response.data.education,
+          imageUrl: response.data.profilePicUrl,
         })
       })
       .catch(function(error) {
         console.log(error);
       })
-  }
-
-  uploadImage() {
-
-  }
-
-  editImage() {
-
-  }
-
-  deleteImage() {
-
   }
 
   updateDatabase() {
@@ -82,10 +78,40 @@ export default class ConsultantProfile extends Component {
       .then(res => console.log(res.data))
   }
 
+  editImage(image) {
+    if (image) {
+      var myHeaders = new Headers();
+      myHeaders.append("Authorization", `Client-ID ${IMGUR_CLIENT_ID}`);
+
+      var formdata = new FormData();
+      formdata.append("image", image);
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: formdata,
+        redirect: 'follow'
+      };
+
+      fetch("https://api.imgur.com/3/image", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          this.setState({ imageUrl: result.data.link});
+          PostRequest(`users/update/photo/` + this.state.id, { profilePicUrl: result.data.link });
+        })
+        .catch(error => console.log('error', error));
+    }
+  };
+
+  deleteImage() {
+    this.setState({ imageUrl: DEFAULT_PROFILE_PIC });
+    PostRequest(`users/update/photo/` + this.state.id, { profilePicUrl: '' });
+  };
+
   generalInfo() {
     return (
       <Grid item className="padding">
-        <img className="small-image"/>
+        <img className="small-image" src={this.state.imageUrl || DEFAULT_PROFILE_PIC} alt="" />
         <h4 className="info-title">{this.state.firstName + " " + this.state.lastName}</h4>
         <hr/>
         <h5>Education</h5>
@@ -117,12 +143,33 @@ export default class ConsultantProfile extends Component {
             <Editable content={this.state.email} updateDatabase={this.updateDatabase} updateField={(value) => this.setState({ email: value})}/>
             &nbsp;
             <h5>Picture</h5>
-            <Grid item>
-              <img className="profile-image"/>
+            <Grid item container alignItems='center'>
+              <Grid item>
+                <img
+                  className="profile-image"
+                  src={this.state.imageUrl || DEFAULT_PROFILE_PIC}
+                  alt=""
+                />
+              </Grid>
               <Grid item className="buttons">
-                <button className="btn btn-secondary action-btn" onClick={this.uploadImage}>Upload</button>
-                <button className="btn btn-secondary action-btn below" onClick={this.editImage}>Edit</button>
-                <button className="btn btn-secondary action-btn below" onClick={this.deleteImage}>Delete</button>
+                <input
+                  type="file"
+                  id="BtnBrowseHidden"
+                  style={{ display: "none" }}
+                  onChange={(e) => this.editImage(e.target.files[0])}
+                />
+                <label
+                  htmlFor="BtnBrowseHidden"
+                  className="btn btn-secondary action-btn"
+                >
+                  Edit
+                </label>
+                <button
+                  className="btn btn-secondary action-btn below"
+                  onClick={this.deleteImage}
+                >
+                  Delete
+                </button>
               </Grid>
             </Grid>
           </Grid>

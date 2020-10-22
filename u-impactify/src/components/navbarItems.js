@@ -32,7 +32,7 @@ export const navbarItems = [
         cName: 'nav-text'
     }, {
         title: 'Logout',
-        path: '/logout',
+        path: '/',
         icon: <AiIcons.AiOutlineLogout />,
         cName: 'nav-text'
     },

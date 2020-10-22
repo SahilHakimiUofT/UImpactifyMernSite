@@ -37,7 +37,7 @@ export const learnerItems = [
         cName: 'lnav-text'
     }, {
         title: 'Logout',
-        path: '/logout',
+        path: '/',
         icon: <AiIcons.AiOutlineLogout />,
         cName: 'lnav-text'
     },

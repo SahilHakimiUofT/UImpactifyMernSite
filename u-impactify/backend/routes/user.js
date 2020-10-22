@@ -56,4 +56,15 @@ router.route('/update/:id').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/update/photo/:id').post((req, res) => {
+  User.findById(req.params.id)
+        .then(user => {
+            user.profilePicUrl = req.body.profilePicUrl
+            user.save()
+                .then(() => res.json('User Updated'))
+                .catch(err => res.status(400).json('Error'));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+})
+
 module.exports = router;
