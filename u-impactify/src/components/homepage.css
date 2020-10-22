@@ -1,5 +1,6 @@
 .homepage{
     text-align: center;
+    height: 100vh;
 }
 
 .table{
@@ -15,3 +16,4 @@
     margin-right: auto;
     width: 50%;   
 }
+

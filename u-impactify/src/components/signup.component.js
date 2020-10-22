@@ -12,7 +12,7 @@ const SignUp = ( { history }) => {
     const { setUserType } = React.useContext(AuthContext);
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
-        const { _id, password, type } = event.target.elements;
+        const { _id, password, type, username, firstName, lastName } = event.target.elements;
 
         console.log(_id.value);
         console.log(type.value);
@@ -20,7 +20,10 @@ const SignUp = ( { history }) => {
         let databody = {
             "_id": _id.value,
             "userType": type.value,
-            "email": _id.value
+            "email": _id.value,
+            "username": username.value,
+            "firstName": firstName.value,
+            "lastName": lastName.value
         }
 
         console.log(databody);
@@ -68,6 +71,21 @@ const SignUp = ( { history }) => {
                     <label>
                         Password <br />
                         <input name="password" type="password" placeholder="Enter Password" />
+                    </label>
+                    <br />
+                    <label>
+                        Username <br />
+                        <input name="username" type="text" placeholder="Enter Username" />
+                    </label>
+                    <br />
+                    <label>
+                        First Name <br />
+                        <input name="firstName" type="text" placeholder="Enter First Name" />
+                    </label>
+                    <br />
+                    <label>
+                        Last Name <br />
+                        <input name="lastName" type="text" placeholder="Enter Last Name" />
                     </label>
                     <br />
                     <label>
