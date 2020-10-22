@@ -24,7 +24,7 @@ const DashboardRoute = () => {
   }
 
   return (
-    <Route path="/dashboard" exact component={component} />
+    <PrivateRoute path="/dashboard" exact component={component} />
   )
 }
 
@@ -39,8 +39,8 @@ class App extends Component {
                         <Route path="/about" exact component={about} />
                         <Route path="/signup" exact component={signup} />
                         <Route path="/login" exact component={login} />
-                        <Route path="/profile-learner" exact component={LearnerProfile}/>
-                        <Route path="/profile-consultant" exact component={ConsultantProfile}/>
+                        <PrivateRoute path="/profile-learner" exact component={LearnerProfile}/>
+                        <PrivateRoute path="/profile-consultant" exact component={ConsultantProfile}/>
                         <DashboardRoute />
                     </div>
                 </Router>

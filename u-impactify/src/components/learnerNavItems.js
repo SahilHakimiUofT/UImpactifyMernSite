@@ -6,7 +6,7 @@ import * as IoIcons from 'react-icons/io';
 export const learnerItems = [
     {
         title: 'Dashboard',
-        path: '/',
+        path: '/dashboard',
         icon: <AiIcons.AiFillHome />,
         cName: 'lnav-text'
     },
