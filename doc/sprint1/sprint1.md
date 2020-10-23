@@ -47,16 +47,19 @@ The estimate for sprint 1 is 24.
 | TBD-30 | Develop Login Page Frontend | Mohammad Amr Khan |
 | TBD-31 | Nav Bar Class development | Mohammad Amr Khan |
 | TBD-32 | Create Front end for landing page | Mohammad Amr Khan |
+| TBD-45 | Redirect to correct dashboard after logging in/signing up | Tony Xu
+| TBD-47 | Add Additional Fields to Signup Page
 
 ### TBD-2 - Homepages 
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
 | TBD-37 | Implement Headers and sub-headers on Dashboard | Sofia Rahul |
-| TBD-39 | Implement a logout button | Mohammad Sajjad | 
+| TBD-39 | Implement a logout button | Mohammad Amr Khan | 
 | TBD-41 | Create a dashboard view for learner | Mohammad Sajjad |
 | TBD-42 | Create a dashboard view for consultant | Sahil Hakimi |
-| TBD-40 | Implement a profile page leading to personal information of the user | Sahil Hakimi |
+| TBD-40 | Implement a profile link in dashboard leading to personal information page | Sahil Hakimi |
 | TBD-43 | Create a dashboard view for the social initiative | Sofia Rahul |
+| TBD-46 | Log out user when they click the logout button | Mohammad Amr Khan |
 
 ### TBD-4 - Profile Pages 
 | Task ID | Task Name | Assigned To |
@@ -64,6 +67,7 @@ The estimate for sprint 1 is 24.
 | TBD-35 | User Profiles - Front-end | Winston Ge |
 | TBD-36 | User Profiles - Back-end: Basic Info | Rui Wu |
 | TBD-38 | User Profiles - Profile Pic | Tony Xu |
+
 ### TBD-44 - Initialize Project
 This task was assigned to Tony Xu.
 
