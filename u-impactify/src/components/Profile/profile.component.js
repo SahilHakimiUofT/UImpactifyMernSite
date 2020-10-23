@@ -243,7 +243,7 @@ export default class Profile extends Component {
         <div className="content-wrap">
           <Grid container direction="row">
             <Grid item>
-              <ProfileBar userType={this.state.userType}/>
+              <ProfileBar/>
             </Grid>
             <Grid xs container direction="column">
               {this.generalInfo()}

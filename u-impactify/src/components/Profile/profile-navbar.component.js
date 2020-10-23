@@ -7,10 +7,16 @@ import logo from '../UImpactify-logo.png';
 import { AuthContext } from '../../Auth';
 
 export default class ProfileBar extends Component {
-  items = []
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      items: []
+    }
+  }
 
   componentDidMount() {
-    this.items = this.props.userType === 'learner' ? learnerItems : navbarItems
+    this.setState({items: this.context.userType === "learner" ? learnerItems : navbarItems})
   }
 
   render() {
@@ -22,7 +28,7 @@ export default class ProfileBar extends Component {
                 <li>
                     <img src={logo} className ='logo' alt="Logo" />
                 </li>
-                {this.items.map((item, index) => {
+                {this.state.items.map((item, index) => {
                     return (
                         <li key={index} className={item.cName}>
                             <Link to={item.path} className="ITEM">
