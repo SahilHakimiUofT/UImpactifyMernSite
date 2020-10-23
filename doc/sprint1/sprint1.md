@@ -47,8 +47,8 @@ The estimate for sprint 1 is 24.
 | TBD-30 | Develop Login Page Frontend | Mohammad Amr Khan |
 | TBD-31 | Nav Bar Class development | Mohammad Amr Khan |
 | TBD-32 | Create Front end for landing page | Mohammad Amr Khan |
-| TBD-45 | Redirect to correct dashboard after logging in/signing up | Tony Xu
-| TBD-47 | Add Additional Fields to Signup Page
+| TBD-45 | Redirect to correct dashboard after logging in/signing up | Tony Xu |
+| TBD-47 | Add Additional Fields to Signup Page | Mohammad Amr Khan |
 
 ### TBD-2 - Homepages 
 | Task ID | Task Name | Assigned To |
