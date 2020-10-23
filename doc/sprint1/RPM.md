@@ -31,5 +31,5 @@ The release goal for this sprint is to have the login and homepages of all three
 - TBD-4 allows users to see their personal profile and update it. This page is important to have complete since it will be used later for the job boards and users need to be able to keep their information up to date.
 
 ### High Level Release Goals for Furture Sprints
-As mentioned earlier, each sprint should include new functionality and improve on existing functionality (bug fixes) - if requried - therefore generally we will be selecting the highest priority items from the Product Backlog to work on each sprint. The priority has been set based on how critical the item is to get the application working.
+As mentioned earlier, each sprint should include new functionality and improve on existing functionality (bug fixes) - if requried - therefore generally we will be selecting the highest priority items from the Product Backlog to work on each sprint. The priority has been set based on how critical the item is to get the application working. By the end, we hope to allow consultants to create and manage courses and for leaners to be able to join them. We also hope to allow learners to view information about social initiatives and apply to any jobs/volunteer positions posted by the initiatives.
 
