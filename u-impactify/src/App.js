@@ -2,13 +2,13 @@ import React, {Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import homepage from "./components/homepage.component"
-import about from "./components/about.component"
-import signup from './components/signup.component';
-import login from './components/login'
-import Consultant from './components/consultant'
-import Learner from './components/learner'
-import SocialInitiative from './components/socialInitDashboard';
+import homepage from "./components/Homepage/homepage.component"
+import about from "./components/About/about.component"
+import signup from './components/Signup/signup.component';
+import login from './components/Login/login'
+import Consultant from './components/Consultant/consultant'
+import Learner from './components/Learner/learner'
+import SocialInitiative from './components/SocialInitiative/socialInitDashboard';
 import { AuthProvider, AuthContext } from './Auth';
 import PrivateRoute from './PrivateRoute';
 import { Test } from './components/test'

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import NavBarHome from './navbarhome.component';
-import Footer from './footer.component';
+import NavBarHome from '../HomeNavbar/navbarhome.component';
+import Footer from '../Footer/footer.component';
 import './homepage.css';
-import home_photo from '../images/homepage.png';
-import garden from '../images/garden.png';
-import speclized from '../images/specialized.png';
-import resources from '../images/resources.png';
-import app from '../config/firebase';
+import home_photo from '../../images/homepage.png';
+import garden from '../../images/garden.png';
+import speclized from '../../images/specialized.png';
+import resources from '../../images/resources.png';
+import app from '../../config/firebase';
 
 export default class homepage extends Component{
     componentDidMount(){

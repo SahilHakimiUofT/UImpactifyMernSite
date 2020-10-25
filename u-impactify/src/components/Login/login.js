@@ -1,10 +1,10 @@
 import React, { useCallback, useContext } from 'react'
 import { withRouter, Redirect } from "react-router";
-import app from "../config/firebase";
-import { AuthContext } from "../Auth";
-import Footer from './footer.component';
-import NavBarHome from './navbarhome.component';
-import login_photo from '../images/login_page.png';
+import app from "../../config/firebase";
+import { AuthContext } from "../../Auth";
+import Footer from '../Footer/footer.component';
+import NavBarHome from '../HomeNavbar/navbarhome.component';
+import login_photo from '../../images/login_page.png';
 import './login.css';
 
 

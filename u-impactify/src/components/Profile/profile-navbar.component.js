@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { learnerItems } from '../learnerNavItems';
-import { navbarItems } from '../navbarItems';
+import { learnerItems } from '../Learner/learnerNavItems';
+import { navbarItems } from '../Consultant/navbarItems';
 import './profile-navbar.css';
-import logo from '../UImpactify-logo.png';
+import logo from '../../images/UImpactify-logo.png';
 import { AuthContext } from '../../Auth';
 
 export default class ProfileBar extends Component {

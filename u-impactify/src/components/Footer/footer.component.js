@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './footer.css';
-import logo from './UImpactify-logo.png';
+import logo from '../../images/UImpactify-logo.png';
 
 export default class Footer extends Component{
     render(){

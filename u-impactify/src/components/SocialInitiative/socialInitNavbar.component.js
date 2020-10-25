@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { navbarItems } from './socialInitNavbarItems';
 import './socialInitNavbar.css';
-import logo from './UImpactify-logo.png';
+import logo from '../../images/UImpactify-logo.png';
 
 export default class Navbar extends Component {
     render() {

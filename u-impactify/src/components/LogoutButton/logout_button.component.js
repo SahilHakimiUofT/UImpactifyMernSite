@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import app from '../config/firebase';
+import app from '../../config/firebase';
 
 export default class LogOutButton extends Component{
     render(){

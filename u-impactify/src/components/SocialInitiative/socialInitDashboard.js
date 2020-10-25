@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './socialInitNavbar.component.js';
-import Footer from './footer.component';
+import Footer from '../Footer/footer.component';
 import './socialInitDashboard.css';
 export default class SocialInitiativeDashboard extends Component{
     render(){

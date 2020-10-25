@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import NavBarHome from './navbarhome.component';
-import Footer from './footer.component';
+import NavBarHome from '../HomeNavbar/navbarhome.component';
+import Footer from '../Footer/footer.component';
 import './about.css';
-import about_photo from '../images/about_image.png';
+import about_photo from '../../images/about_image.png';
 
 export default class login extends Component{
     render(){

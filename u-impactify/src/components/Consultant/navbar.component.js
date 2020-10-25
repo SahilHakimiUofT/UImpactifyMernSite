@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { learnerItems } from './learnerNavItems.js';
-import './LearnerNavbar.css';
-import logo from './UImpactify-logo.png';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
+import { navbarItems } from './navbarItems.js';
+import './Navbar.css';
+import logo from '../../images/UImpactify-logo.png';
 
-export default class LearnerBar extends Component {
+export default class Navbar extends Component {
     render() {
         return (
             <body>
-                <div className='top-nav'>
-                    <h1 className = "dashboard">Dashboard</h1>
-                </div>
-                <h1 className = "calendar">Calendar</h1>
-                <h1 className = "announcements">Announcements</h1>
-                <h1 className = "classes">Your Classes</h1>
-                <h1 className = "courses">Suggested Courses</h1>
-                <nav className='menu'>
-                    <ul className='menu-items'>
+                <nav className='nav-menu'>
+                    <ul className='nav-menu-items'>
                         <li>
                             <img src={logo} className ='logo' alt="Logo" />
                         </li>
-                        {learnerItems.map((item, index) => {
+                        {navbarItems.map((item, index) => {
                             return (
                                 <li key={index} className={item.cName}>
                                     <Link to={item.path} className="ITEM">
@@ -29,11 +24,17 @@ export default class LearnerBar extends Component {
                                     </Link>
                                 </li>
                             )
+
+
                         })
                         }
+
+
                     </ul>
                 </nav>
             </body>
         );
+
+
     }
 }

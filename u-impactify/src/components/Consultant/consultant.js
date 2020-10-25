@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from './navbar.component.js';
-import Footer from './footer.component';
+import Footer from '../Footer/footer.component';
 import './consultant.css';
 import * as CgIcons from 'react-icons/cg';
 import { Link } from 'react-router-dom';

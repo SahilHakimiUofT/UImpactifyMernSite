@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Editable from './editable.component'
 import { Grid } from '@material-ui/core'
-import Footer from '../footer.component'
+import Footer from '../Footer/footer.component'
 import ProfileBar from './profile-navbar.component'
 import "./profile.css"
 import { GetRequest, PostRequest } from '../../helpers/httprequests'

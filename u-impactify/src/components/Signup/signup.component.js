@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react';
-import NavBarHome from './navbarhome.component';
-import Footer from './footer.component';
-import app from "../config/firebase"
+import NavBarHome from '../HomeNavbar/navbarhome.component';
+import Footer from '../Footer/footer.component';
+import app from "../../config/firebase"
 import { withRouter } from 'react-router';
-import singup_photo from '../images/sign.png';
+import singup_photo from '../../images/sign.png';
 import './Signup.css';
-import { AuthContext } from '../Auth';
+import { AuthContext } from '../../Auth';
 
 
 const SignUp = ( { history }) => {
