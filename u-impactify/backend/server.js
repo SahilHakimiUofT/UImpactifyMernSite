@@ -35,6 +35,10 @@ const userRouter = require('./routes/user');
 // to use the file
 app.use('/users', userRouter);
 
+const positionRouter = require('./routes/position');
+// allow for the application to use the position router
+app.use('/positions', positionRouter);
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
