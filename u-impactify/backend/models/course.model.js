@@ -6,10 +6,21 @@ const courseSchema = new Schema({
   _id = {type: String},
   name = {type: String},
   description = {type: String},
-  sessionsPerWeek = {type: String},
-  weeks = {type: String},
-  hoursPerWeek = {type: String},
-  schedule = {type: String}
+  outline = [{
+    lessonNumber: {type: String},
+    topic: {type: String},
+    assessment: {type: String}
+  }],
+  instructor = {type: String},
+  lessons = {type: String},
+  tasks = {type: String},
+  lessonLength = {type: String},
+  startDate = {type: Date},
+  endDate = {type: Date},
+  preReq = {type: String},
+  preReqFor = {type: String},
+  difficultyLevel = {type: String},
+  pictureUrl = {type: String}
 });
 
 const Course = mongoose.model('Course', courseSchema)
