@@ -12,3 +12,17 @@ router.route('/:id').get((req, res) => {
     .then(course => res.json(course))
     .catch(err => res.status(400).json('Error: ' + err))
 });
+
+router.route('/add').post((req, res) => {
+
+});
+
+router.route('/update/:id').patch((req, res) => {
+
+});
+
+router.route('/delete/:id').delete((req, res) => {
+  Course.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Course deleted"))
+    .catch(err => res.status(400).json('Error: ' + err))
+});
