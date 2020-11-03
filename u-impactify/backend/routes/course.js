@@ -64,3 +64,5 @@ router.route('/delete/:id').delete((req, res) => {
     .then(() => res.json("Course deleted"))
     .catch(err => res.status(400).json('Error: ' + err))
 });
+
+module.exports = router
