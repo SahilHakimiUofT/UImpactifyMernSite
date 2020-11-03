@@ -17,8 +17,8 @@ const courseSchema = new Schema({
   lessonLength: {type: String},
   startDate: {type: Date},
   endDate: {type: Date},
-  preReq: {type: String},
-  preReqFor: {type: String},
+  preReq: [{type: String}],
+  preReqFor: [{type: String}],
   difficultyLevel: {type: String},
   pictureUrl: {type: String}
 });
