@@ -5,6 +5,7 @@ import * as AiIcons from 'react-icons/ai';
 import { navbarItems } from './navbarItems.js';
 import './Navbar.css';
 import logo from '../../images/UImpactify-logo.png';
+import add_course from '../../images/add-new-course.png';
 
 export default class Navbar extends Component {
     render() {
@@ -32,6 +33,7 @@ export default class Navbar extends Component {
 
                     </ul>
                 </nav>
+                
             </body>
         );
 
