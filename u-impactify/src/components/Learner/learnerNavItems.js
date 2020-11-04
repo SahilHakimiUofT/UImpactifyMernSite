@@ -22,7 +22,7 @@ export const learnerItems = [
         cName: 'lnav-text'
     }, {
         title: 'Courses',
-        path: '/courses',
+        path: '/all-courses',
         icon: <FaIcons.FaGraduationCap />,
         cName: 'lnav-text'
     }, {
