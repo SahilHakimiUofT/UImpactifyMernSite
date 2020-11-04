@@ -13,6 +13,7 @@ import { AuthProvider, AuthContext } from './Auth';
 import PrivateRoute from './PrivateRoute';
 import { Test } from './components/test'
 import Profile from './components/Profile/profile.component'
+import Opportunities from './components/Opportunities/opportunities';
 
 const DashboardRoute = () => {
   const { userType } = React.useContext(AuthContext);
@@ -42,6 +43,7 @@ class App extends Component {
                         <Route path="/signup" exact component={signup} />
                         <Route path="/login" exact component={login} />
                         <PrivateRoute path="/profile" exact component={Profile}/>
+                        <Route path="/opportunities" exact component={Opportunities}/>
                         <DashboardRoute />
                     </div>
                 </Router>

@@ -26,8 +26,8 @@ export const learnerItems = [
         icon: <FaIcons.FaGraduationCap />,
         cName: 'lnav-text'
     }, {
-        title: 'Oppurtunities',
-        path: '/oppurtunities',
+        title: 'Opportunities',
+        path: '/opportunities',
         icon: <IoIcons.IoIosGlobe />,
         cName: 'lnav-text'
     }, {
