@@ -7,6 +7,7 @@ import about from "./components/About/about.component"
 import signup from './components/Signup/signup.component';
 import login from './components/Login/login'
 import Consultant from './components/Consultant/consultant'
+import addcourse from './components/Consultant/addcourse.component'
 import Learner from './components/Learner/learner'
 import SocialInitiative from './components/SocialInitiative/socialInitDashboard';
 import { AuthProvider, AuthContext } from './Auth';
@@ -41,6 +42,8 @@ class App extends Component {
                         <Route path="/about" exact component={about} />
                         <Route path="/signup" exact component={signup} />
                         <Route path="/login" exact component={login} />
+                        <Route path="/consultant" exact component={Consultant} />
+                        <Route path="/addcourse" exact component={addcourse} />
                         <PrivateRoute path="/profile" exact component={Profile}/>
                         <DashboardRoute />
                     </div>
