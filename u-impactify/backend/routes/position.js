@@ -1,8 +1,15 @@
 const router = require('express').Router();
 let Position = require('../models/position.model');
 
-router.route('/:id').get((req, res) => {
+router.route('/jobid/:id').get((req, res) => {
     Position.findById(req.params.id)
+        .then(position => res.json(position))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/byorg/').get((req, res) => {
+    const oremail = req.body.orgemail;
+    Position.find({ orgemail: oremail })
         .then(position => res.json(position))
         .catch(err => res.status(400).json('Error: ' + err));
 });
@@ -19,8 +26,9 @@ router.route('/add').post((req, res) => {
     const employmentType = req.body.employmentType;
     const description = req.body.description;
     const location = req.body.location; 
+    const orgemail = req.body.orgemail; 
 
-    const newPosition = new Position({positionTitle, organization, employmentType, description, location});
+    const newPosition = new Position({positionTitle, organization, employmentType, description, location, orgemail});
 
     newPosition.save()
         .then(() => res.json('Position Added'))

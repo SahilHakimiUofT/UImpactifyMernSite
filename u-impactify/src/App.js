@@ -14,6 +14,7 @@ import { AuthProvider, AuthContext } from './Auth';
 import PrivateRoute from './PrivateRoute';
 import { Test } from './components/test'
 import Profile from './components/Profile/profile.component'
+import { AddPositions } from './components/AddPositions/addPositions'
 
 const DashboardRoute = () => {
   const { userType } = React.useContext(AuthContext);
@@ -44,6 +45,7 @@ class App extends Component {
                         <Route path="/login" exact component={login} />
                         <PrivateRoute path="/addcourse" exact component={addcourse} />
                         <PrivateRoute path="/profile" exact component={Profile}/>
+                        <PrivateRoute path="/opportunities" exact component={AddPositions}/>
                         <DashboardRoute />
                     </div>
                 </Router>

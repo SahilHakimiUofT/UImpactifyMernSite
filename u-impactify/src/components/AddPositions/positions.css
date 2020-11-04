@@ -1,0 +1,24 @@
+.form{
+    align-self: center;
+    margin-left: 40%;
+}
+
+.top-nav {
+    background-color:#A78EC3;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+}
+
+.dashboard {
+    color:#FFFFFF;
+    justify-content: start;
+    align-items: center;
+    margin-left: 270px;
+    margin-top: 0px;
+    padding: 0px;
+    width: 290px;
+    display: flex;
+}

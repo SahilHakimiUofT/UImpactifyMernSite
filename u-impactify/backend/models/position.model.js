@@ -7,7 +7,8 @@ const positionSchema = new Schema({
     organization: String,
     employmentType: String,
     description: String,
-    location: String
+    location: String,
+    orgemail: String
 });
 
 const Position = mongoose.model('Positions', positionSchema);
