@@ -59,7 +59,6 @@ The estimate for sprint 2 is 26.
 | ------- | --------- | ---------------- |
 | TBD-53 | UI for adding Positions | Mohammad Amr Khan |
 | TBD-54 | Jobs Router & Model | Mohammad Amr Khan |
-| TBD-57 | List of Current Positions for Org | Mohammad Amr Khan |
 
 ### TBD-15 - See All Positions
 | Task ID | Task Name | Assigned To |
