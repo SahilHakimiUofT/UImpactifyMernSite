@@ -128,7 +128,7 @@ export default class SocialInitiativeDashboard extends Component{
         return(
           <Grid item className="padding">
             <img className="small-image" src={this.state.imageUrl || DEFAULT_PROFILE_PIC} alt=""/>
-            <h4 className="info-title">{this.state.firstName === "" && this.state.lastName == "" ? "name not set" : this.state.firstName + " " + this.state.lastName}</h4>
+            <h4 className="info-title">{this.state.firstName === "" && this.state.lastName == "" ? "Organization Name" : this.state.firstName + " " + this.state.lastName}</h4>
             <hr/>
             <h5>Organization Description</h5>
             <Editable content={this.state.description} updateField={this.updateDescription}/>
@@ -142,14 +142,8 @@ export default class SocialInitiativeDashboard extends Component{
             <h4>Your Information</h4>
             <hr/>
             <Grid container direction="row" justify="center">
-              <Grid xs container direction="column">
-                <h5>First Name</h5>
-                <Editable content={this.state.firstName} updateField={this.updateFirstName}/>
-                &nbsp;
-                <h5>Email Address</h5>
-                <Editable content={this.state.email} updateField={this.updateEmail}/>
-                &nbsp;
-                <h5>Picture</h5>
+              <Grid xs container direction="row">
+              <h5>Picture</h5>
                 <Grid item container alignItems='center'>
                   <Grid item>
                     <img
@@ -178,9 +172,15 @@ export default class SocialInitiativeDashboard extends Component{
                       Delete
                     </button>
                   </Grid>
+                  </Grid>
+                <h5>First Name</h5>
+                <Editable content={this.state.firstName} updateField={this.updateFirstName}/>
+                &nbsp;
+                <h5>Email Address</h5>
+                <Editable content={this.state.email} updateField={this.updateEmail}/>
+                &nbsp;
                 </Grid>
-              </Grid>
-              <Grid xs container direction="column">
+              <Grid xs container direction="row">
                 <h5>Last Name</h5>
                 <Editable content={this.state.lastName} updateField={this.updateLastName}/>
                 &nbsp;
@@ -196,17 +196,20 @@ export default class SocialInitiativeDashboard extends Component{
         return (
           <div className="main">
             <div className="content-wrap">
+            <div className='top-nav'>
+              <h1 className = "dashboard">Dashboard</h1>
+            </div>
               <Grid container direction="row">
                 <Grid item>
                   <Navbar/>
                 </Grid>
-                <Grid xs container direction="column">
+                <Grid xs container direction="row">
                   {this.generalInfo()}
                   <Grid item>
                     <button className="btn btn-primary btn-save" onClick={this.updateDatabase}>Save</button>
                   </Grid>
                 </Grid>
-                <Grid xs container direction="column">
+                <Grid xs container direction="row">
                   {this.personalInfo()}
                 </Grid>
               </Grid>
