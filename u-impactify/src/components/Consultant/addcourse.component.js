@@ -275,32 +275,17 @@ export default class AddCourse extends Component{
                                 )
                             }
                             <br/>
-
                             <button type = "button" onClick = {this.updateDatabase} id = "submitButton" className="btn btn-lg btn-primary">Submit</button>
-
-
-
-
                             <button type="button" id = "discardButton" className="btn btn-lg btn-primary" onClick = {this.cancelCourse}>Discard</button>
 
                                 </div>
                                             </div>
                                         </form>
-                                            
-                                            
-                                            
-                                            
-                                            
-                                        
-                                            <div className = 'Foot'>
-                                            <Footer />
-                                            </div>
-                                    
-                                            
-                                            
-                                            
-                                            </div>
-                                            </div>
+                <div className = 'Foot'>
+                    <Footer />
+                 </div>        
+        </div>
+    </div>
 
 
     );
