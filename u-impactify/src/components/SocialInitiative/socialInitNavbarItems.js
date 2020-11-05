@@ -5,7 +5,7 @@ import * as IoIcons from 'react-icons/io';
 export const navbarItems = [
     {
         title: 'Dashboard',
-        path: '/',
+        path: '/dashboard',
         icon: <AiIcons.AiFillHome />,
         cName: 'nav-text'
     },
@@ -15,6 +15,11 @@ export const navbarItems = [
         icon: <IoIcons.IoIosGlobe />,
         cName: 'nav-text'
     }, {
+        title: 'Our Positions',
+        path: '/my_positions',
+        icon: <IoIcons.IoIosGlobe />,
+        cName: 'nav-text'
+    },{
         title: 'Settings',
         path: '/settings',
         icon: <IoIcons.IoIosSettings />,
