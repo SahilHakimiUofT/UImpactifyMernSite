@@ -7,6 +7,7 @@ import about from "./components/About/about.component"
 import signup from './components/Signup/signup.component';
 import login from './components/Login/login'
 import Consultant from './components/Consultant/consultant'
+import addcourse from './components/Consultant/addcourse.component'
 import Learner from './components/Learner/learner'
 import SocialInitiative from './components/SocialInitiative/socialInitDashboard';
 import { AuthProvider, AuthContext } from './Auth';
@@ -14,6 +15,9 @@ import PrivateRoute from './PrivateRoute';
 import { Test } from './components/test'
 import Profile from './components/Profile/profile.component'
 import Opportunities from './components/Opportunities/opportunities';
+import allCourses from './components/Learner/AllCoursesView/AllCoursesList'
+import { AddPositions } from './components/AddPositions/addPositions'
+
 
 const DashboardRoute = () => {
   const { userType } = React.useContext(AuthContext);
@@ -42,9 +46,14 @@ class App extends Component {
                         <Route path="/about" exact component={about} />
                         <Route path="/signup" exact component={signup} />
                         <Route path="/login" exact component={login} />
+                        <Route path="/all-courses" exact component={allCourses} />
+                        <PrivateRoute path="/addcourse" exact component={addcourse} />
                         <PrivateRoute path="/profile" exact component={Profile}/>
+
                         <Route path="/opportunities" exact component={Opportunities}/>
-                        <DashboardRoute />
+
+                        <PrivateRoute path="/add_position" exact component={AddPositions}/>
+ <DashboardRoute />
                     </div>
                 </Router>
             </AuthProvider>

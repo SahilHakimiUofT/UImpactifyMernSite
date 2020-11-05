@@ -1,9 +1,8 @@
-
 .main{
     min-height: 100vh;
    position: relative;
    min-width: 960px;
- }
+  }
 .content-wrap{
    height: 100%;
 }
@@ -34,7 +33,7 @@
    padding: 0;
    width: 100%;
    position: relative;
-   bottom:300px;
+   top: 700px;
 }
 
 
@@ -108,8 +107,99 @@ span {
 }
 
 .add-course{
-   width:100px;
+   width:120px;
    position: relative;
    right:440px;
    margin-top: 2rem;
+}
+.adding{
+    position: relative;
+    left:8rem;
+    top:3rem;
+}
+.form-control{
+    width:900px;
+}
+
+
+.course-dates{
+    margin-top:4rem;
+    font-size: large;
+    
+   
+}
+
+.date-of-course{
+    margin-left:2rem;
+}
+.end-label{
+    margin-left:2rem;
+}
+.course-prereq{
+    margin-top:4rem;
+    font-size: large;
+}
+
+.prereq-for{
+    margin-top:4rem;
+    font-size: large;
+}
+
+.diffuculty-level{
+    margin-top:4rem;
+    font-size: large;
+}
+.imageLabel{
+
+    margin-right: 2rem;
+    font-size: large;
+}
+.courseImage{
+    margin-top:4rem;
+    text-align: left;
+    width:400px;
+    
+}
+
+.course-image{
+   width:150px;
+   height: 150px;
+   position: relative;
+   right:125px
+   
+
+}
+
+.outlineHeader{
+   text-align: left;
+   margin-top: 5rem;
+}
+.courseOutline{
+
+   align-items: center;
+  
+   
+}
+#submitButton{
+   margin-right:10px;
+   margin-top:10px;
+}
+#discardButton{
+   margin-top:10px;
+}
+.topicIn{
+   margin-top: 1px;
+}
+
+.add-course-id{
+   
+   margin-top: 2rem;
+}
+
+.add-course-des{
+   
+   margin-top: 2rem;
+}
+#edit-course-pic{
+   margin-right: 1rem;
 }

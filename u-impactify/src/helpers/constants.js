@@ -9,3 +9,4 @@ export const APP_NAME = 'U-Impactify'
 
 // Images
 export const DEFAULT_PROFILE_PIC = 'https://i.imgur.com/tdi3NGa.png'
+export const DEFAULT_COURSE_PIC = 'https://i.imgur.com/qu0J7Wb.png'
