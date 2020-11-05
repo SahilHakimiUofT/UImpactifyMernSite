@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Container, Row, Col} from 'react-bootstrap';
+import { Grid } from '@material-ui/core'
 import useFetchPositions from  './useFetchPositions.js';
 import PositionCom from './Position.component.js'
 import PositionsPagination from './PositionsPagination.js';
 import { useHistory } from "react-router-dom";
+import ProfileBar from '../Profile/profile-navbar.component'
+import './opportunities.css'
 //import SearchForm from './SearchForm.js';
 
 
@@ -26,35 +28,29 @@ export default function Opportunities(){
 
     let history = useHistory();
         return (          
-            <Container className="my-4">
-                <div className='top-nav'></div>
-                
-                <h1 className="mb-4" >Opportunities</h1>
-                <Row>
-                    <Col xs={1}>
-                    <button className="btn btn-outline-primary" onClick={() => history.goBack()}>Back</button> 
-                    </Col>
-
-                    <Col xs={3}>
-                        <PositionsPagination className="btn btn-outline-primary" page={page} setPage={setPage} hasNextPage={hasNextPage}/>
-                    </Col>
-                </Row>
-                    
-                {loading && <h1>Loading...</h1>}
-                {error && <h1>Error. Try Refreshing.</h1>}
-                {positions.map(position => {
-                    return <PositionCom key={position.id} position={position} />
-                })}
-                <Row>
-                    <Col xs={1}>
-                    <button className="btn btn-outline-primary" onClick={() => history.goBack()}>Back</button> 
-                    </Col>
-
-                    <Col xs={3}>
-                        <PositionsPagination className="btn btn-outline-primary" page={page} setPage={setPage} hasNextPage={hasNextPage}/>
-                    </Col>
-                </Row>
-            </Container>
+            <Grid container direction = "row" className="my-4">
+                <Grid item>
+                    <ProfileBar/>
+                </Grid>
+                <Grid xs container direction="column">
+                    <Grid item>
+                        <div className='top-nav'>
+                        <h1 className="opportunities">Opportunities</h1>
+                        </div>
+                        
+                    </Grid>
+                    <Grid item>
+                        <PositionsPagination page={page} setPage={setPage} hasNextPage={hasNextPage}/>
+                    </Grid>
+                    <Grid xs container direction="column">
+                        {loading && <h1>Loading...</h1>}
+                        {error && <h1>Error. Try Refreshing.</h1>}
+                        {positions.map(position => {
+                            return <PositionCom key={position.id} position={position} />
+                        })}
+                    </Grid>
+                </Grid>
+            </Grid>
         )
 
         //                <SearchForm params={params} onParamChange={handleParamChange} />

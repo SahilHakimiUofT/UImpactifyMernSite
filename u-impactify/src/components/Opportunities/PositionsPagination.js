@@ -1,5 +1,6 @@
 import React from 'react'
 import { Pagination } from 'react-bootstrap'
+import './opportunities.css'
 
 
 export default function PositionsPagination({ page, setPage, hasNextPage }) {    
@@ -16,7 +17,7 @@ export default function PositionsPagination({ page, setPage, hasNextPage }) {
    }
    
    return(
-     <div>
+     <div >
        <Pagination>{items}</Pagination>
      </div>
    );
