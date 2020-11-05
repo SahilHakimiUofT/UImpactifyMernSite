@@ -16,11 +16,12 @@ export function AddPositions(){
     return(
         <div>
             <div className='top-nav'>
-                <h1 className="dashboard"><a href='/dashboard'>Dashboard</a></h1>
+                <h1 className="dashboard"><a href='/settings'>Settings</a></h1>
             </div>
             <div>
                     <div className="form">
-                            <AddPositionForm />   
+                            <AddPositionForm /> 
+                            <br />  
                         </div>       
             </div>
             <div>

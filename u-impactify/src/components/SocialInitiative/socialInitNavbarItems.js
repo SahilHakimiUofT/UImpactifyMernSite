@@ -10,8 +10,8 @@ export const navbarItems = [
         cName: 'nav-text'
     },
     {
-        title: 'Opportunities',
-        path: '/opportunities',
+        title: 'Add Positions',
+        path: '/add_position',
         icon: <IoIcons.IoIosGlobe />,
         cName: 'nav-text'
     }, {

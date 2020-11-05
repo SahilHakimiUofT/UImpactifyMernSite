@@ -47,7 +47,7 @@ class App extends Component {
                         <Route path="/all-courses" exact component={allCourses} />
                         <PrivateRoute path="/addcourse" exact component={addcourse} />
                         <PrivateRoute path="/profile" exact component={Profile}/>
-                        <PrivateRoute path="/opportunities" exact component={AddPositions}/>
+                        <PrivateRoute path="/add_position" exact component={AddPositions}/>
                         <DashboardRoute />
                     </div>
                 </Router>
