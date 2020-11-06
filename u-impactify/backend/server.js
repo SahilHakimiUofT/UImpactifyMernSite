@@ -41,6 +41,9 @@ const positionRouter = require('./routes/position');
 // allow for the application to use the position router
 app.use('/positions', positionRouter);
 
+const socialInitiativeRouter = require('./routes/socialinitiative');
+app.use('/initiatives', socialInitiativeRouter);
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
