@@ -69,7 +69,7 @@ We will use the fibonacci numbers as possible point values
     * learner can pick which course they want
 7. As a learner, I want to be able to see a list of social initiatives and information about each one so that I can get involved with what interests me and gain knowledge about it
     * learner is able to see list of social initiatives and information
-    * learner can click on those to learn more
+    * learner can click on those to learn more (taken to a page with more details)
     * they should be able to see info like a description or contact info
 8. As a learner, I want to see what volunteer/employment opportunities each social initiative offers so I can put my skills to use
     * learner is able see volunteer/employment opportunities
