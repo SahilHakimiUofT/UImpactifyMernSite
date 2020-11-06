@@ -4,12 +4,15 @@
    min-width: 960px;
 }
 
+.dashboard{
+   text-align: right;
+}
+
 .top-nav {
    background-color:#A78EC3;
    height: 80px;
    display: flex;
    justify-content: flex-start;
-   align-items: center;
    width: auto;
    top:0px;
    position: relative;
@@ -27,13 +30,13 @@
    vertical-align: middle;
    display: inline;
  }
-/* 
-.content_wrap{
-
-} */
 
 .info-title {
    display: inline;
+ }
+
+ .padding{
+   background-color: #e6ccb3;
  }
  
  .profile-image {

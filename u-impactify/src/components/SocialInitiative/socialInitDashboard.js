@@ -205,12 +205,12 @@ export default class SocialInitiativeDashboard extends Component{
                 </Grid>
                 <Grid xs container direction="row">
                   {this.generalInfo()}
-                  <Grid item>
-                    <button className="btn btn-primary btn-save" onClick={this.updateDatabase}>Save</button>
-                  </Grid>
+                <Grid item>
+                  <button className="btn btn-primary btn-save" onClick={this.updateDatabase}>Save</button>
                 </Grid>
                 <Grid xs container direction="row">
                   {this.personalInfo()}
+                </Grid>
                 </Grid>
               </Grid>
               <Footer/>
