@@ -8,12 +8,11 @@ export default class Navbar extends Component {
     render() {
         return (
             <body>
-                <div className='top-nav'>
+                {/* <div className='top-nav'>
                     <h1 className = "dashboard">Dashboard</h1>
-                </div>
-                <h1 className = "profile">My Profile</h1>
-                <h1 className = "mission">Our Mission</h1>
-                <h1 className = "about">About Us</h1>
+                </div> */}
+                {/* <h1 className = "mission">Our Mission</h1>
+                <h1 className = "about">About Us</h1> */}
                 <nav className='menu'>
                     <ul className='menu-items'>
                         <li>
