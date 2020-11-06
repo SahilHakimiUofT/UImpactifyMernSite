@@ -10,3 +10,4 @@ export const APP_NAME = 'U-Impactify'
 // Images
 export const DEFAULT_PROFILE_PIC = 'https://i.imgur.com/tdi3NGa.png'
 export const DEFAULT_COURSE_PIC = 'https://i.imgur.com/qu0J7Wb.png'
+export const DEFAULT_INITIATIVE_PIC = 'https://www.indeed.com/cmp/_s/s/7250b2a/placeholder-logo-128.png'

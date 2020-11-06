@@ -2,8 +2,8 @@ import React, {Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import homepage from "./components/Homepage/homepage.component"
-import about from "./components/About/about.component"
+import homepage from "./components/Homepage/homepage.component";
+import about from "./components/About/about.component";
 import signup from './components/Signup/signup.component';
 import login from './components/Login/login'
 import Consultant from './components/Consultant/consultant'
@@ -17,7 +17,8 @@ import Profile from './components/Profile/profile.component'
 import Opportunities from './components/Opportunities/opportunities';
 import allCourses from './components/Learner/AllCoursesView/AllCoursesList'
 import AddPositions from './components/AddPositions/addPositions'
-
+import InitiativeList from './components/InitiativeList/IniativeList';
+import InitiativeDetails from './components/InitiativeDetails/InitiativeDetails';
 
 const DashboardRoute = () => {
   const { userType } = React.useContext(AuthContext);
@@ -51,7 +52,9 @@ class App extends Component {
                         <PrivateRoute path="/profile" exact component={Profile}/>
                         <Route path="/opportunities" exact component={Opportunities}/>
                         <PrivateRoute path="/add_position" exact component={AddPositions}/>
- <DashboardRoute />
+                        <Route path="/initiatives" exact component={InitiativeList} />
+                        <Route path="/initiatives/:id" exact component={InitiativeDetails} />
+                        <DashboardRoute />
                     </div>
                 </Router>
             </AuthProvider>
