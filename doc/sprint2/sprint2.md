@@ -75,6 +75,10 @@ The estimate for sprint 2 is 26.
 | TBD-61 | create view for about and my mission tabs on social init dashboard | Sofia Rahul |
 
 ## Sprint 2 Goals
-The release goal for this sprint for learners to be able to view and search all positions and positions.
+The release goals for this sprint are:
+- For learners to be able to view and search all positions as well as see a list of social initiatives.
+- For learners to be able to see all courses available to them and search them
+- For consultants to be able to create new courses
+- For social initiatives to be able to view and edit their profile information
 These tasks need to be completed since future sprints will depend on the items implemented in this sprint.
 
