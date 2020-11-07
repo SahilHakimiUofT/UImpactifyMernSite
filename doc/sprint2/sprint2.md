@@ -23,7 +23,7 @@
 
 | Task ID | Task Name | Task Description |
 | ------- | --------- | ---------------- |
-| TBD-18 | As a consultant (teacher), create new courses so that I can teach what I know best |
+| TBD-18 |Create Courses| As a consultant (teacher), create new courses so that I can teach what I know best |
 | TBD-6 | See and Search Courses | As a learner, I want to be able to see all courses and search for relevant courses so that I know what is being offered and what interests me |
 | TBD-14 | See All Social Initiatives | As a learner, I want to be able to see a list of social initiatives and information about each one so that I can get involved with what interests me and gain knowledge about it |
 | TBD-16 | Post Positions | As a social organization, I want to be able to post about open positions with the organization so that I can get employees and volunteers | 
