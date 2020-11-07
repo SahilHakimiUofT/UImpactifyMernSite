@@ -23,7 +23,7 @@
 
 | Task ID | Task Name | Task Description |
 | ------- | --------- | ---------------- |
-| TBD-18 | Create and Edit Courses | As a consultant (teacher), I want to be able to edit courses and create new courses so that I can teach what I know best |
+| TBD-18 | As a consultant (teacher), create new courses so that I can teach what I know best |
 | TBD-6 | See and Search Courses | As a learner, I want to be able to see all courses and search for relevant courses so that I know what is being offered and what interests me |
 | TBD-14 | See All Social Initiatives | As a learner, I want to be able to see a list of social initiatives and information about each one so that I can get involved with what interests me and gain knowledge about it |
 | TBD-16 | Post Positions | As a social organization, I want to be able to post about open positions with the organization so that I can get employees and volunteers | 
@@ -42,7 +42,6 @@ The estimate for sprint 2 is 26.
 | ------- | --------- | ---------------- |
 | TBD-49 | Get and add information of courses to the database | Winston Ge |
 | TBD-50 | A page to fill in fields about a course and a button to submit it |  |
-| TBD-51 | When clicking on a course, go to a page to modify it | |
 
 ### TBD-6 - See and Search Courses 
 | Task ID | Task Name | Assigned To |
