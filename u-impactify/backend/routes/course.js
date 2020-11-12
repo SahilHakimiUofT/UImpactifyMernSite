@@ -65,4 +65,10 @@ router.route('/delete/:id').delete((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err))
 });
 
+router.route('/instructor/:id').get((req, res) => {
+  Course.find({"instructor": req.params.id})
+    .then(courses => res.json(courses))
+    .catch(err => res.status(400).json('Error: ' + err))
+})
+
 module.exports = router
