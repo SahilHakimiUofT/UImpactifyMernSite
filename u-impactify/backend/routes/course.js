@@ -14,7 +14,6 @@ router.route('/:id').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-  const _id = req.body._id
   const name = req.body.name
   const description = req.body.description
   const outline = req.body.outline
@@ -29,7 +28,7 @@ router.route('/add').post((req, res) => {
   const difficultyLevel = req.body.difficultyLevel
   const pictureUrl = req.body.pictureUrl
 
-  const newCourse = new Course({_id, name, description, outline, instructor, lessons, tasks, lessonLength, 
+  const newCourse = new Course({name, description, outline, instructor, lessons, tasks, lessonLength, 
     startDate, endDate, preReq, preReqFor, difficultyLevel, pictureUrl})
   
   newCourse.save()
