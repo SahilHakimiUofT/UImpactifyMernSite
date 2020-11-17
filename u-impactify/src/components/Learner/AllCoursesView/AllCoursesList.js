@@ -7,6 +7,7 @@ import { text } from './AllCoursesList.text';
 import SearchBar from '../../SearchBar/SearchBar';
 import PageWrapper from '../../PageWrapper/PageWrapper'
 import { GetRequest } from '../../../helpers/httprequests';
+import CourseDetail from '../CourseDetailView/CourseDetail';
 
 const AllCoursesCard = ({ course }) => (
   <Grid

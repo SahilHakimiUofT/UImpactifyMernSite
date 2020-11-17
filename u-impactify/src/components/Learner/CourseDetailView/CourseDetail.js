@@ -8,7 +8,6 @@ import moment from 'moment';
 
 function CourseDetailBase() {
     const [state, setState] = React.useState ({
-        id:'',
         name:'',
         description:'',
         outline:[{}],
@@ -18,13 +17,14 @@ function CourseDetailBase() {
         lessonLength:'',
         startDate:new Date(),
         endDate:new Date(),
-        preReq:'',
-        preReqFor:'',
+        preReq:[],
+        preReqFor:[],
         difficultyLevel:'',
         pictureUrl:''
         })
     
     let { id: courseId} = useParams();
+
     React.useEffect(() => {
         GetRequest('courses/' + courseId)
             .then(response => {
@@ -41,6 +41,7 @@ function CourseDetailBase() {
                     startDate: response.data.startDate,
                     endDate: response.data.endDate,
                     preReq: response.data.preReq,
+                    preReqFor:response.data.preReqFor,
                     difficultyLevel: response.data.difficultyLevel,
                     pictureUrl: response.data.pictureUrl,
                 })
@@ -75,7 +76,6 @@ function CourseDetailBase() {
     }
 
     function generalInfo() {
-        
         return(
             <div>
                 <Grid item>
@@ -87,11 +87,8 @@ function CourseDetailBase() {
                     <img src={state.pictureUrl} className='course-image'/>
                     <h2>Course Description</h2> 
                     <div>{moment(state.startDate).format("DD/MM/YYYY")} - {moment(state.endDate).format("DD/MM/YYYY")}</div>
-                    <div>Pre-Request : {state.preReq} </div>
                     <div>Difficulty Level : {state.difficultyLevel} </div>
                     <div>Task : {state.task}</div>
-                    <h4>Course Outline : </h4>
-
                 </Grid>
                 
 
@@ -99,12 +96,47 @@ function CourseDetailBase() {
         )
     }
 
+
+    function coursePreRequest() {
+        return(
+            <div>
+                <h7>Pre-Request : </h7>
+                {
+                    state.preReq.map(preCourse => (
+                        <li>{preCourse}</li>
+                    ))
+                }
+            </div>
+        )
+    }
+
+    function coursePreRequestFor() {
+        return(
+            <div>
+                <h7>Pre-Request For: </h7>
+                {
+                    state.preReqFor.map(preCoursefor => (
+                        <li>{preCoursefor}</li>
+                    ))
+                }
+            </div>
+        )
+    }
+
     function courseoutline() {
-        const outlineList = state.outline.map(task => {
-            return (
-                <li key={task.lessonNumber} className={task.topic}>{task.assessment}</li>
-            )
-        })
+        return (
+            <div>
+                <h4>Course Outline : </h4>
+                {
+                    state.outline.map(task => (
+                        <div>
+                            <li>{task.topic}</li>
+                            <div>{task.assessment}</div>
+                        </div>
+                    ))
+                }
+            </div>
+        )
     }
 
     return (
@@ -114,6 +146,13 @@ function CourseDetailBase() {
                 {enrollCourse()}
                 <hr />
                 {generalInfo()}
+            </Grid>
+            <Grid item xs={6}>
+                {coursePreRequest()}
+                {coursePreRequestFor()}                
+            </Grid>
+            <Grid item xs={12}>
+                <hr />
                 {courseoutline()}
             </Grid>
         </Grid>
