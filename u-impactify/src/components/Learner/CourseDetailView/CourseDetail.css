@@ -1,0 +1,35 @@
+.top-navv {
+    background-color:#A78EC3;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    margin-left: -245px;
+}
+
+.courseTitle{
+    color:#A78EC3;
+    justify-content: start;
+    align-items: center;
+    margin-top: 50px;
+    padding: 0px;
+    width: 290px;
+    display: flex;
+}
+
+.course-image {
+    max-width: 100%;
+    height: 100px;
+    display: block;
+    object-fit: cover !important;
+    margin-left:130px;  
+}
+
+  button.enroll-btn:hover {
+    border-width: 2px;
+    border-color: #a78ec3;
+    color: #a78ec3;
+    background-color: white !important;
+  }
+

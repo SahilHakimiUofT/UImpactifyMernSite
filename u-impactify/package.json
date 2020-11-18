@@ -13,6 +13,7 @@
     "formik": "^2.2.0",
     "jquery": "^3.5.1",
     "material-ui": "^0.20.2",
+    "moment": "^2.29.1",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.4.0",
