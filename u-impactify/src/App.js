@@ -15,6 +15,7 @@ import PrivateRoute from './PrivateRoute';
 import { Test } from './components/test'
 import Profile from './components/Profile/profile.component'
 import Opportunities from './components/Opportunities/opportunities';
+import OrgOpportunities from './components/OrgPositions/OrgOpportunities';
 import allCourses from './components/Learner/AllCoursesView/AllCoursesList'
 import AddPositions from './components/AddPositions/addPositions'
 import InitiativeList from './components/InitiativeList/IniativeList';
@@ -56,6 +57,7 @@ class App extends Component {
                         <PrivateRoute path="/profile" exact component={Profile}/>
                         <PrivateRoute path="/editcourse/:courseid" exact component={EditCourse}/>
                         <Route path="/opportunities" exact component={Opportunities}/>
+                        <PrivateRoute path="/our-opportunities" exact component={OrgOpportunities}/>
                         <PrivateRoute path="/add_position" exact component={AddPositions}/>
                         <Route path="/initiatives" exact component={InitiativeList} />
                         <Route path="/initiatives/:id" exact component={InitiativeDetails} />

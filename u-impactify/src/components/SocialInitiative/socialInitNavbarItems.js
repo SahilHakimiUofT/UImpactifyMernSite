@@ -16,7 +16,7 @@ export const navbarItems = [
         cName: 'nav-text'
     }, {
         title: 'Our Positions',
-        path: '/my_positions',
+        path: '/our-opportunities',
         icon: <IoIcons.IoIosGlobe />,
         cName: 'nav-text'
     },{
