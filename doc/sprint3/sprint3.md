@@ -40,30 +40,44 @@ The estimate for sprint 2 is 25.
 ### TBD-10 - Edit Courses and Upload Files
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
-| TBD-65 | Backend endpoint to get a list of courses that an instructor has | |
-| TBD-66 | Uploading files and assessments |  |
-| TBD-66 | Edit page for courses |  |
-| TBD-66 | A page to display list of courses an instructor has |  |
+| TBD-65 | Backend endpoint to get a list of courses that an instructor has | Winston Ge |
+| TBD-67 | Uploading files and assessments | Sahil Hakimi |
+| TBD-68 | Edit page for courses | Sahil Hakimi  |
+| TBD-80 | Change the way course info is stored |  |
 
 ### TBD-20 - Enroll in Courses
 | Task ID | Task Name | Assigned To |
-| ------- | --------- | ---------------- | 
+| ------- | --------- | ---------------- |
+| TBD-82 | Backend for enroll course | | 
+| TBD-74 | Course Detail Page | | 
 
 ### TBD-12 - Drop Courses
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
+| TBD-81 | Backend for dropping and enrolling in courses | Sofia Rahul |
 
-### TBD-22 - Apply to Positions 
+### TBD-77 - Upload Files for courses 
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
+| TBD-79 | Frontend for consultants to upload their files | |
+| TBD-78 | Backend for upload files to database | |
 
 ### TBD-5 - Check Enrolled Courses
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
+| TBD-75 | Connect backend for all courses view to the frontend | Mohammad Sajjad |
+| TBD-76 | Implement the classes view | Mohammad Sajjad |
 
-### TBD-66 - Show Organization Postings
+### TBD-64 - Show Organization Postings
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
+| TBD-71 | Backend to get Organizations Postings | Mohammad Amr Khan |
+| TBD-72 | Page to Display Postings | Mohammad Amr Khan
+
+### TBD-22 - Apply to Positions
+| Task ID | Task Name | Assigned To |
+| ------- | --------- | ---------------- |
+| TBD-22 | Apply to open social initiatives positions | Tony Xu |
 
 ## Sprint 3 Goals
 The release goals for this sprint are:
