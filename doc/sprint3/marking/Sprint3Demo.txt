@@ -1,6 +1,6 @@
 Marking Rubric for the Sprint 2 class demo
 ==========================================
-Team name: dont break master
+Team name: tbd
 
 Attendance: 2 marks full team is attending, 1 mark if at least one member not present, 0 marks the whole team not present
 Your mark: 2/2
