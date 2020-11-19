@@ -1,13 +1,13 @@
 
-.main{
+.consultant-main{
     min-height: 100vh;
    position: relative;
    min-width: 960px;
  }
-.content-wrap{
+.consultant-content-wrap{
    height: 100%;
 }
-.dashboard {
+.consultant-dashboard {
    color:#FFFFFF;
    justify-content: start;
    align-items: center;
@@ -18,7 +18,7 @@
    display: flex;
 }
 
-.top-navbar {
+.consultant-top-navbar {
    background-color:#A78EC3;
    height: 80px;
    display: flex;
@@ -29,7 +29,7 @@
    position: relative;
 }
 
-.Foot{
+.consultant-Foot{
    
    padding: 0;
    width: 100%;
@@ -39,7 +39,7 @@
 
 
 
-.sidebar {
+.consultant-sidebar {
    background-color:#FFFFFF;
    padding-left: 0;
    width: 210px;
@@ -53,7 +53,7 @@
    
 }
 
-.nav-text {
+.consultant-nav-text {
    display: flex;
    justify-content: start;
    align-items: center;
@@ -65,7 +65,7 @@
    color: #9D9D9D;
 }
 
-.nav-text a {
+.consultant-nav-text a {
    margin-left: 5px;
    margin-right: 5px;
    text-decoration: none;
@@ -80,36 +80,63 @@
    color: #9D9D9D;
 }
 
-.nav-text a:hover {
+.consultant-nav-text a:hover {
    background-color: #A78EC3;
    color: #FFFFFF;
 }
 
-.nav-menu-items {
+.consultant-nav-menu-items {
    
    width: 100%;
    margin: 0 auto;
-}
-
-ul {
    padding-left: 5px;
    padding-right: 5px;
    align-items: center;
    text-align: center;
-
 }
 
-span {
-   margin-left: 10px;
-}
 
-.logo {
+
+
+
+.consultant-logo {
    margin-top: 15px;
 }
 
-.add-course{
+.consultant-add-course{
    width:100px;
    position: relative;
    right:440px;
    margin-top: 2rem;
+}
+
+.consultant-calendar {
+   color: #A78EC3;
+   justify-content: start;
+   align-items: center;
+   margin-left: 270px;
+   margin-top: 50px;
+   width: 0px;
+   padding: 0px;
+   display: flex;
+}
+
+.consultant-classes {
+   color: #A78EC3;
+   justify-content: start;
+   align-items: center;
+   margin-left: 270px;
+   margin-top: 270px;
+   padding: 0px;
+   width: 230px;
+   display: flex;
+}
+.consultant-course-list{
+   align-items: center;
+   position: relative;
+   left: 15%;
+}
+.consultant-courseImg{
+   width:175px;
+   height:175px;
 }

@@ -19,6 +19,7 @@ import allCourses from './components/Learner/AllCoursesView/AllCoursesList'
 import AddPositions from './components/AddPositions/addPositions'
 import InitiativeList from './components/InitiativeList/IniativeList';
 import InitiativeDetails from './components/InitiativeDetails/InitiativeDetails';
+import EditCourse from './components/Course/editCourse';
 import CourseDetail from './components/Learner/CourseDetailView/CourseDetail';
 
 const DashboardRoute = () => {
@@ -52,6 +53,7 @@ class App extends Component {
                         <Route path="/all-courses/:id" exact component={CourseDetail} />
                         <PrivateRoute path="/addcourse" exact component={addcourse} />
                         <PrivateRoute path="/profile" exact component={Profile}/>
+                        <PrivateRoute path="/editcourse/:courseid" exact component={EditCourse}/>
                         <Route path="/opportunities" exact component={Opportunities}/>
                         <PrivateRoute path="/add_position" exact component={AddPositions}/>
                         <Route path="/initiatives" exact component={InitiativeList} />
