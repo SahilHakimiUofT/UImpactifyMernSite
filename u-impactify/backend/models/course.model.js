@@ -7,7 +7,7 @@ const courseSchema = new Schema({
   description: {type: String},
   outline: [{
     topic: {type: String},
-    assessment: {type: String}
+    lessonNumber: {type: String}
   }],
   instructor: {type: String},
   lessons: {type: String},

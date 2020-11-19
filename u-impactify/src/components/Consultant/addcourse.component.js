@@ -19,9 +19,8 @@ export default class AddCourse extends Component{
    
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this)
+        this.handleRemove = this.handleRemove.bind(this)
         this.updateCourseName = this.updateCourseName.bind(this)
-        this.updateCourseId = this.updateCourseId.bind(this)
         this.updateStartDate = this.updateStartDate.bind(this)
         this.updateEndDate = this.updateEndDate.bind(this)
         this.updatePreqs = this.updatePreqs.bind(this)
@@ -32,8 +31,8 @@ export default class AddCourse extends Component{
         this.deleteImage = this.deleteImage.bind(this)
         this.updateCourseDescription=this.updateCourseDescription.bind(this)
         this.updateDatabase=this.updateDatabase.bind(this)
+        this.cancelCourse = this.cancelCourse.bind(this)
         this.state = {
-          courseId: '',
           courseName:'',
           courseDescription:'',
           startDate:new Date(),
@@ -52,14 +51,11 @@ export default class AddCourse extends Component{
         this.setState({courseName:e.target.value})
     }
 
-    updateCourseId(e){
-        this.setState({courseId:e.target.value})
-    }
     updateStartDate(e){
-        this.setState({startDate:e.target.value})
+        this.setState({startDate:new Date(e.target.value)})
     }
     updateEndDate(e){
-        this.setState({endDate:e.target.value})
+        this.setState({endDate:new Date(e.target.value)})
     }
     updatePreqs(e){
         this.setState({prereqs:e.target.value.split(',')})
@@ -79,8 +75,17 @@ export default class AddCourse extends Component{
     
     cancelCourse = () => { 
         document.getElementById("course-form").reset();
-        this.setState({imageUrl:DEFAULT_COURSE_PIC})
-        this.setState({topics:[]})
+        this.setState({courseName:'',
+        courseDescription:'',
+        startDate:new Date(),
+        endDate:new Date(),
+        prereqs:[],
+        preqsfor:[],
+        diffuculty:'',
+        outline:[{topic: '',lessonNumber:''}],   
+        imageUrl:DEFAULT_COURSE_PIC,
+        topics:[]})
+       
       }
 
     addTopic(){
@@ -135,7 +140,6 @@ export default class AddCourse extends Component{
 
       updateDatabase() {
         const course = {
-            _id: this.state.courseId,
             name: this.state.courseName,
             description: this.state.courseDescription,
             outline:this.state.outline,
@@ -152,8 +156,11 @@ export default class AddCourse extends Component{
     
         PostRequest('courses/add', course)
           .then(res => console.log(res.data))
-      
-        this.cancelCourse()
+        
+          setTimeout(() => {
+            this.cancelCourse()
+          }, 100);
+       
         }
 
 
@@ -166,7 +173,7 @@ export default class AddCourse extends Component{
     componentDidMount(){
         var userId = this.context.currentUser.email
         GetRequest('users/'+userId)
-        .then(res => {this.setState({instructorName:res.data.firstName + ' ' + res.data.lastName})
+        .then(res => {this.setState({instructorName:userId})
 
         })
     }
@@ -206,9 +213,6 @@ export default class AddCourse extends Component{
                             <div className='form-group'>
                                 <label htmlFor="courseName" className = 'add-course-name'>Course Name: </label>
                             <input onChange = {this.updateCourseName} type="text" className="form-control" id="courseName" name ="courseName" aria-describedby="emailHelp" placeholder="Enter Course"></input>
-
-                            <label htmlFor="courseId" className = 'add-course-id'>Course Id: </label>
-                            <input onChange={this.updateCourseId} type="text" className="form-control" id="courseId" name ="courseId" aria-describedby="emailHelp" placeholder="Enter Course Id: "></input> 
 
                              <label htmlFor="courseDescription" className = 'add-course-des'>Course Description: </label>
                             <input onChange={this.updateCourseDescription} type="text" className="form-control" id="courseDescription" name ="courseDescription" aria-describedby="emailHelp" placeholder="Enter Course Description: "></input>  
