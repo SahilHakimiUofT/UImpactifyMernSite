@@ -7,8 +7,8 @@ router.route('/jobid/:id').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/byorg/').get((req, res) => {
-    const oremail = req.body.orgemail;
+router.route('/byorg/:email').get((req, res) => {
+    const oremail = req.params.email;
     Position.find({ orgemail: oremail })
         .then(position => res.json(position))
         .catch(err => res.status(400).json('Error: ' + err));
