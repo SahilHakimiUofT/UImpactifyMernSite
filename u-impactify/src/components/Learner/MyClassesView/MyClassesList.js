@@ -74,6 +74,10 @@ const ClassesCard = ({ classes }) => (
           <b>{text.openButton}</b>
         </button>
       </Link>
+        <button className='btn btn-outline-primary drop-btn' >
+                    <b>Drop Course</b>
+        </button>
+      
     </Grid>
   </Grid>
 )
