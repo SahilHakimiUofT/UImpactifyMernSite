@@ -19,6 +19,10 @@
     font-size: 30px;
 }
 
+.opportunity-card-content {
+  width: 100%;
+}
+
 .pagination{
     margin-top:20px;
     border-width: 2px;
@@ -34,4 +38,32 @@
     justify-content: flex-start;
     align-items: center;
     width: auto;
+}
+
+.apply-btn {
+  border-color: #a78ec3;
+  color: #a78ec3;
+}
+
+button.apply-btn:hover {
+  border-color: #a78ec3;
+  color: #a78ec3;
+  background-color: white !important;
+}
+
+button.apply-btn:focus {
+  box-shadow: none;
+}
+
+.apply-btn-container {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-label {
+  padding-top: 3px;
+  padding-left: 5px
 }
