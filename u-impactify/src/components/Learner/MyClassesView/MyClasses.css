@@ -35,6 +35,12 @@
     border-color: #a78ec3;
     color: #a78ec3;
   }
+
+  .drop-btn {
+    border-color: #a78ec3;
+    color: #a78ec3;
+    margin-left: 20px;
+  }
     
   .search {
     width: 100%;
