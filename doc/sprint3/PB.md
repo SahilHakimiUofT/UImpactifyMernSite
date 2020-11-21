@@ -37,6 +37,9 @@ We will use the fibonacci numbers as possible point values
     * learner is able to post questions about a course
     * learner is able to see the response to their questions
     * learner is able to see all questions and responses for the course
+22. As a learner, I should be able to apply to open social initiatives positions
+    * learner should be able to apply to a position in the opportunities list
+    * learner should be able to upload resume and cover letter with their application
 
 ## Completed User Stories
 ### Sprint 1
