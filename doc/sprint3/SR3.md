@@ -14,7 +14,7 @@
 | Prof Ilir | |
 
 ## Tasks This Sprint
-All tasks that were selected for this sprint were successfully completed. All the subtasks that were created for each completed task have also been completed.
+All tasks that were selected for this sprint were successfully completed except TBD-12. All the subtasks that were created for each completed task have also been completed.
 
 This has been reflected on Jira.
 
