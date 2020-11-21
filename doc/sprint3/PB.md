@@ -37,9 +37,6 @@ We will use the fibonacci numbers as possible point values
     * learner is able to post questions about a course
     * learner is able to see the response to their questions
     * learner is able to see all questions and responses for the course
-22. As a learner, I should be able to apply to open social initiatives positions
-    * learner should be able to apply to a position in the opportunities list
-    * learner should be able to upload resume and cover letter with their application
 
 ## Completed User Stories
 ### Sprint 1
@@ -83,5 +80,7 @@ We will use the fibonacci numbers as possible point values
 3. As a learner, I want to be able to see current courses that I am enrolled in so I know what commitments I have and what I am learning
     * learner will be able to see a list of courses they are enrolled in
 	* Learner will be able to see details of these courses (e.g. schedule, description)
-
+22. As a learner, I should be able to apply to open social initiatives positions
+    * learner should be able to apply to a position in the opportunities list
+    * learner should be able to upload resume and cover letter with their application
 
