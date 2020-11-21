@@ -83,4 +83,6 @@ We will use the fibonacci numbers as possible point values
 22. As a learner, I should be able to apply to open social initiatives positions
     * learner should be able to apply to a position in the opportunities list
     * learner should be able to upload resume and cover letter with their application
-
+20. As a learner, I want to be able to enroll in a course so I can gain skills in fields that I am interested in
+    * learner should be able to see details of each courses
+    * learner should be able to enroll the course by press enroll button
