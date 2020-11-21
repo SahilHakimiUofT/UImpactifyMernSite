@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { useParams } from 'react-router';
 import { GetRequest } from '../../../helpers/httprequests';
 import PageWrapper from '../../PageWrapper/PageWrapper';
 import { Grid } from '@material-ui/core';
 import './CourseDetail.css'
 import moment from 'moment';
+import EnrollCourse from '../enrollCourse'
 
 function CourseDetailBase() {
     const [state, setState] = React.useState ({
@@ -63,7 +64,9 @@ function CourseDetailBase() {
         ) 
     }
 
+
     function enrollCourse() {
+
         return(
             <div>
                 <Grid item>
@@ -74,6 +77,8 @@ function CourseDetailBase() {
             </div>
         )
     }
+
+
 
     function generalInfo() {
         return(

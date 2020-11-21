@@ -11,7 +11,10 @@ const userSchema = new Schema({
     firstName: String,
     lastName: String,
     skills: String,
-    completedCourses: String,
+    completedCourses: [{type:String}],
+    enrollCourse: [{
+        courseId: String,
+    }],
     languages: String,
     description: String,
     profilePicUrl: String,

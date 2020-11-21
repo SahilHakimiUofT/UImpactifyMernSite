@@ -48,6 +48,7 @@ router.route('/update/:id').post((req, res) => {
             user.languages = req.body.languages;
             user.description = req.body.description;
             user.education = req.body.education;
+            user.enrollCourse = req.body.enrollCourse;
     
             user.save()
                 .then(() => res.json('User Updated'))
@@ -66,5 +67,7 @@ router.route('/update/photo/:id').post((req, res) => {
         })
         .catch(err => res.status(400).json('Error: ' + err));
 })
+
+
 
 module.exports = router;
