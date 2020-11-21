@@ -45,7 +45,7 @@ Allowing a learner to check what classes they are enrolled in
 Allowing a social organization to be able to see the positions they have posted
 ## TBD-22
 Learners can apply to open social initiative positions
-## TBD-12
+## TBD-12 (not completed during this sprint)
 Ability for the learner to drop a course
 ## TBD-20
 Learners can enroll in a course 
