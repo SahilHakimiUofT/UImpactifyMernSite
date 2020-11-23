@@ -61,6 +61,12 @@ The estimate for sprint 4 is 28.
 ### TBD-9 - Ask Questions about courses
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
+| TBD-84 | Backend for Posts | Mohammad Amr Khan |
+| TBD-85 | Frontend for creating a Post | Mohammad Amr Khan |
+| TBD-86 | Frontend to view all posts | Mohammad Amr Khan |
+| TBD-87 | Backend for commenting | Mohammad Amr Khan |
+| TBD-88 | View individual Post | Mohammad Amr Khan |
+| TBD-89 | Front end for commenting | Mohammad Amr Khan |
 
 
 ### TBD-13 - Wishlist a course
