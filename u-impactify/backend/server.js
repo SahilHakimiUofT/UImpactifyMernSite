@@ -99,6 +99,9 @@ app.use('/initiatives', socialInitiativeRouter);
 const applicationRouter = require('./routes/application');
 app.use('/applications', applicationRouter)
 
+const postRouter = require('./routes/posts');
+app.use('/posts', postRouter)
+
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
