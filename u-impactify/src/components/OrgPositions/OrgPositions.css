@@ -1,0 +1,119 @@
+.top-nav {
+  background-color:#A78EC3;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+}
+
+.opportunities{
+  color:#FFFFFF;
+  justify-content: start;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 0px;
+  padding: 0px;
+  width: 290px;
+  display: flex;
+  font-size: 30px;
+}
+
+.pagination{
+  margin-top:20px;
+  border-width: 2px;
+  border-color: #a78ec3;
+  color: #a78ec3;
+  background-color: white !important;
+}
+
+.positions{
+  background-color: rgb(185, 183, 183);
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+}
+
+.oppurtunity-card-content {
+  width: 100%;
+}
+
+.applicants-list-root {
+  padding-top: 5px;
+}
+
+.applicants-list {
+  margin-left: -14px;
+}
+
+/* Hire Btn */
+.hire-btn {
+  border-color: #a78ec3;
+  color: white;
+  background-color: #a78ec3 !important;
+}
+
+button.hire-btn:hover {
+  border-color: #a78ec3;
+  color: white;
+  background-color: #a78ec3 !important;
+}
+
+button.hire-btn:focus {
+  box-shadow: none;
+}
+/* Hire Btn */
+
+/* Reject Btn */
+.reject-btn {
+  border-color: #a78ec3;
+  color: #a78ec3;
+}
+
+button.reject-btn:hover {
+  border-color: #a78ec3;
+  color: #a78ec3;
+  background-color: white !important;
+}
+
+button.reject-btn:focus {
+  box-shadow: none;
+}
+/* Reject Btn */
+
+/* Inactive Btn */
+
+.inactive-btn {
+  border-color: gray ;
+  color: gray !important;
+  background-color: white !important;
+}
+
+button.inactive-btn:hover {
+  border-color: gray;
+  color: gray;
+  background-color: white !important;
+}
+
+button.inactive-btn:focus {
+  box-shadow: none;
+}
+
+/* Inactive Btn */
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  max-width: 100% !important;
+  display: inline;
+}
+
+.dialog-message {
+  padding-top: 15px;
+}
+
+.applicant-info {
+  padding-top: 10px;
+}

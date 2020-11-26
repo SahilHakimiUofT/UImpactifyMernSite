@@ -8,7 +8,8 @@ const positionSchema = new Schema({
     employmentType: String,
     description: String,
     location: String,
-    orgemail: String
+    orgemail: String,
+    applications: [{ type: Schema.Types.ObjectId, ref: 'Applications' }],
 });
 
 const Position = mongoose.model('Positions', positionSchema);

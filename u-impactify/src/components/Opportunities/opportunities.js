@@ -136,7 +136,7 @@ export default function Opportunities() {
           })}
         </Grid>
       </Grid>
-      <Dialog open={dialogOpen}>
+      <Dialog onClose={() => applyDialogAction(false)} open={dialogOpen}>
         <DialogTitle id="form-dialog-title">Apply to: {selectedPosition?.positionTitle}</DialogTitle>
         <DialogContent>
           <DialogContentText>

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { populate } = require('../models/position.model');
 let Position = require('../models/position.model');
 
 router.route('/jobid/:id').get((req, res) => {
@@ -10,7 +11,14 @@ router.route('/jobid/:id').get((req, res) => {
 router.route('/byorg/:email').get((req, res) => {
     const oremail = req.params.email;
     Position.find({ orgemail: oremail })
-        .then(position => res.json(position))
+        .populate({
+          path: 'applications',
+          populate: { path: 'applicant' },
+        })
+        .exec()
+        .then(positions => {
+          res.json(positions)
+        })
         .catch(err => res.status(400).json('Error: ' + err));
 });
 

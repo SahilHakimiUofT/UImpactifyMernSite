@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const applicationSchema = new Schema({
-    positionId: String,
-    applicantId: String,
+    position: String,
+    applicant: { type: String, ref: 'User-test2' },
     resumeId: String,
     coverLetterId: String,
 });
