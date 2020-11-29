@@ -4,7 +4,7 @@ import { Grid } from '@material-ui/core'
 import Footer from '../Footer/footer.component'
 import ProfileBar from './profile-navbar.component'
 import "./profile.css"
-import { GetRequest, PostRequest } from '../../helpers/httprequests'
+import { GetRequest, PutRequest } from '../../helpers/httprequests'
 import { AuthContext } from '../../Auth'
 import {
   IMGUR_CLIENT_ID,
@@ -42,6 +42,7 @@ export default class Profile extends Component {
       languages: '',
       education: '',
       imageUrl: DEFAULT_PROFILE_PIC,
+      enrollCourse: [],
     }
   }
 
@@ -64,6 +65,7 @@ export default class Profile extends Component {
           languages: response.data.languages,
           education: response.data.education,
           imageUrl: response.data.profilePicUrl,
+          enrollCourse: response.data.enrollCourse,
         })
       })
       .catch(function(error) {
@@ -81,10 +83,12 @@ export default class Profile extends Component {
       completedCourses: this.state.completedCourses,
       description: this.state.description,
       languages: this.state.languages,
-      education: this.state.education
+      education: this.state.education,
+      enrollCourse: this.state.enrollCourse,
+
     }
 
-    PostRequest('users/update/' + this.state.id, user)
+    PutRequest('users/update/' + this.state.id, user)
       .then(res => console.log(res.data))
   }
 
@@ -137,7 +141,7 @@ export default class Profile extends Component {
       formdata.append("image", image);
 
       var requestOptions = {
-        method: 'POST',
+        method: 'PUT',
         headers: myHeaders,
         body: formdata,
         redirect: 'follow'
@@ -147,7 +151,7 @@ export default class Profile extends Component {
         .then(response => response.json())
         .then(result => {
           this.setState({ imageUrl: result.data.link});
-          PostRequest(`users/update/photo/` + this.state.id, { profilePicUrl: result.data.link });
+          PutRequest(`users/update/photo/` + this.state.id, { profilePicUrl: result.data.link });
         })
         .catch(error => console.log('error', error));
     }
@@ -155,7 +159,7 @@ export default class Profile extends Component {
 
   deleteImage() {
     this.setState({ imageUrl: DEFAULT_PROFILE_PIC });
-    PostRequest(`users/update/photo/` + this.state.id, { profilePicUrl: '' });
+    PutRequest(`users/update/photo/` + this.state.id, { profilePicUrl: '' });
   };
 
   generalInfo() {

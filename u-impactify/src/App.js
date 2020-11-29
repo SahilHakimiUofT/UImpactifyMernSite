@@ -52,7 +52,7 @@ class App extends Component {
                         <Route path="/signup" exact component={signup} />
                         <Route path="/login" exact component={login} />
                         <Route path="/all-courses" exact component={allCourses} />
-                        <Route path="/all-courses/:id" exact component={CourseDetail} />
+                        <PrivateRoute path="/all-courses/:courseid" exact component={CourseDetail} />
                         <PrivateRoute path="/addcourse" exact component={addcourse} />
                         <PrivateRoute path="/profile" exact component={Profile}/>
                         <PrivateRoute path="/editcourse/:courseid" exact component={EditCourse}/>

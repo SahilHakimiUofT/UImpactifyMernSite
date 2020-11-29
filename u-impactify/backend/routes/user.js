@@ -20,9 +20,10 @@ router.route('/add').post((req, res) => {
     const languages = "";
     const description = "";
     const education = "";
+    const enrollCourse = req.body.enrollCourse;
 
     const newUser = new User({_id, userName, userType, email, phoneNumber, firstName, lastName,
-        skills, completedCourses, languages, description, education});
+        skills, completedCourses, languages, description, education, enrollCourse});
     
 
     newUser.save()
@@ -36,7 +37,7 @@ router.route('/delete/:id').delete((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/update/:id').post((req, res) => {  
+router.route('/update/:id').put((req, res) => {  
     User.findById(req.params.id)
         .then(user => {
             user.email = req.body.email;
@@ -52,7 +53,7 @@ router.route('/update/:id').post((req, res) => {
     
             user.save()
                 .then(() => res.json('User Updated'))
-                .catch(err => res.status(400).json('Error'));
+                .catch(err => res.status(400).json('Error' + err));
         })
         .catch(err => res.status(400).json('Error: ' + err));
 });
