@@ -8,10 +8,11 @@ import { Redirect, useParams, useHistory } from "react-router";
 import CommentsCom from './Comments.component'
 import ProfileBar from '../../Profile/profile-navbar.component'
 
+
 export default function IndividualPostBody(){
 
-    const history = useHistory()
     const {currentUser} = useContext(AuthContext);
+    const { userType } = React.useContext(AuthContext);
     const currentPath = window.location.href;
     const [state, setState] = React.useState({
         id: '',
@@ -23,8 +24,8 @@ export default function IndividualPostBody(){
     })
 
     let { id: postId } = useParams();
-    console.log(currentPath);
-
+    //console.log(currentPath);
+    //console.log(userType);
 
     React.useEffect(() => {
         GetRequest('Posts/' + postId)
@@ -46,6 +47,7 @@ export default function IndividualPostBody(){
 
       console.log(state.comments)
       console.log(currentUser.email)
+      
 
 
       const submitComment = useCallback(async event => {
@@ -59,6 +61,7 @@ export default function IndividualPostBody(){
             "comments": [
                 {
                     "commentContent": newcomm.value,
+                    "commentPosterType": userType,
                     "commentPosterEmail": currentUser.email,
                 }
             ]

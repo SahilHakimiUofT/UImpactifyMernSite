@@ -15,6 +15,8 @@ export default function CommentsCom ({ comment }) {
                         <div className="d-flex justify-content-between" >
                             <div className='opportunity-card-content'>
                                 <Badge variant="info" className="ml-0"> {comment.commentPosterEmail}</Badge>
+                                <br />
+                                <Badge variant="info" className="ml-0"> {comment.commentPosterType}</Badge>
                                 <br/>
                                 <div style={{ wordBreak: 'break-all' }}>
                                     {comment.commentContent}
