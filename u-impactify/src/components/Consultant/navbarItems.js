@@ -25,6 +25,11 @@ export const navbarItems = [
         path: '/courses',
         icon: <FaIcons.FaGraduationCap />,
         cName: 'nav-text'
+    },{
+        title: 'Discussion Board',
+        path: '/forum',
+        icon: <IoIcons.IoIosGlobe />,
+        cName: 'lnav-text',
     }, {
         title: 'Settings',
         path: '/settings',

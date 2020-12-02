@@ -5,9 +5,8 @@ import PostsCom from './Posts.component'
 import PositionsPagination from '../Opportunities/PositionsPagination';
 import { useHistory } from "react-router-dom";
 import ProfileBar from '../Profile/profile-navbar.component'
-import Navbar from '../SocialInitiative/socialInitNavbar.component.js';
 import '../Opportunities/opportunities.css'
-//import SearchForm from './SearchForm.js';
+
 
 
 
@@ -16,7 +15,6 @@ export default function AllPosts(){
     const [params, setParams] = useState({})
     const [page, setPage] = useState(1)
     const { posts, loading, error, hasNextPage} = useFetchPosts(params, page);
-
 
     function handleParamChange(e) {
         const param = e.target.name
@@ -31,12 +29,12 @@ export default function AllPosts(){
         return (          
             <Grid container direction = "row" className="my-4">
                 <Grid item>
-                    <Navbar/>
+                    <ProfileBar/>
                 </Grid>
                 <Grid xs container direction="column">
                     <Grid item>
                         <div className='top-nav'>
-                        <h1 className="posts">All Posts</h1>
+                        <h1 className="posts"> All Posts</h1>
                         </div>
                         <br />
                     </Grid>

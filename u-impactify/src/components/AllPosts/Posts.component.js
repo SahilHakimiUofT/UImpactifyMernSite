@@ -24,7 +24,7 @@ export default function PostsCom ({ post, openApplyDialog }) {
                                 <div style={{ wordBreak: 'break-all' }}>
                                     {post.postContent}
                                 </div>
-                                <Link to={`/posts/${encodeURIComponent(post._id)}`}>
+                                <Link to={`/forum/${encodeURIComponent(post._id)}`}>
                                     <button className='btn btn-outline-primary viewPost'>
                                         <b>View Full Post</b>
                                     </button>

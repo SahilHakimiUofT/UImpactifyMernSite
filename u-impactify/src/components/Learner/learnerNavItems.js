@@ -38,7 +38,7 @@ export const learnerItems = [
     }, {
         title: 'Discussion Board',
         path: '/forum',
-        icon: <FaIcons.FaHandHoldingHeart />,
+        icon: <IoIcons.IoIosGlobe />,
         cName: 'lnav-text',
     }, {
         title: 'Settings',
