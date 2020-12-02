@@ -3,6 +3,10 @@ let User = require('../models/user.model');
 
 router.route('/:id').get((req, res) => {
     User.findById(req.params.id)
+        .populate({
+            path: 'enrollCourse',
+            populate: { path: 'courseId' },
+        })
         .then(user => res.json(user))
         .catch(err => res.status(400).json('Error: ' + err));
 });

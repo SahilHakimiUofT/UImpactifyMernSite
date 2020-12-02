@@ -13,7 +13,7 @@ const userSchema = new Schema({
     skills: String,
     completedCourses: [{type:String}],
     enrollCourse: [{
-        courseId: {type:String}
+        courseId: {type:String, ref: 'Course'}
     }],
     languages: String,
     description: String,
