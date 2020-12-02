@@ -48,15 +48,19 @@ The estimate for sprint 4 is 28.
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
 
+*Assigned to Sahil Hakimi
+
 ### TBD-17 - See Applicant Details
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
-| TBD-81 | Backend for dropping and enrolling in courses | Sofia Rahul |
+
+*Assigned to Tony Xu
 
 ### TBD-21 - Hire and Reject Applicants 
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
- |
+
+*Assigned to Winston Ge
 
 ### TBD-9 - Ask Questions about courses
 | Task ID | Task Name | Assigned To |
@@ -72,6 +76,9 @@ The estimate for sprint 4 is 28.
 ### TBD-13 - Wishlist a course
 | Task ID | Task Name | Assigned To |
 | ------- | --------- | ---------------- |
+| TBD-90 | Connect Frontend with backend for the enrolled courses | Mohammad Sajjad |
+| TBD-91 | Implement wishlist frontend display | Mohammad Sajjad |
+| TBD-92 | Connect the backend and frontend for the wishlist | Mohammad Sajjad |
 
 ## Sprint 4 Goals
 The release goals for this sprint are:
