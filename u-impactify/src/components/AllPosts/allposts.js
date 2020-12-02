@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Grid } from '@material-ui/core'
 import useFetchPosts from  './useFetchPosts';
 import PostsCom from './Posts.component'
@@ -6,11 +6,21 @@ import PositionsPagination from '../Opportunities/PositionsPagination';
 import { useHistory } from "react-router-dom";
 import ProfileBar from '../Profile/profile-navbar.component'
 import '../Opportunities/opportunities.css'
+import { Modal } from './Modal'
+import { GlobalStyle } from './GlobalStyle';
 
 
-
+const BUTTON_WRAPPER_STYLES = {
+    position: 'relative',
+    zIndex: 1
+}
 
 export default function AllPosts(){
+    const [showModal, setShowModal] = useState(false)
+
+    const openModal = () => {
+        setShowModal(prev => !prev)
+    }
 
     const [params, setParams] = useState({})
     const [page, setPage] = useState(1)
@@ -39,9 +49,14 @@ export default function AllPosts(){
                         <br />
                     </Grid>
                     <Grid item>
-                        <div className="add-post-button">
-                            <button className='btn-outline-primary learn-more-btn'>Start A New Discussion</button>
+                        <div style={BUTTON_WRAPPER_STYLES}>
+                            <button className='btn-outline-primary learn-more-btn' onClick={openModal}>Start A New Discussion</button>
+                            <div>
+                              <Modal showModal={showModal} setShowModal={setShowModal} />
+                                <GlobalStyle />
+                             </div>
                         </div>
+                        
                         <br />
                     </Grid>
                     <Grid xs container direction="column">

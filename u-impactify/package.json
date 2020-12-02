@@ -27,6 +27,7 @@
     "react-icons": "^3.11.0",
     "react-markdown": "^5.0.2",
     "react-moment": "^1.0.0",
+    "react-responsive-modal": "^6.0.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
