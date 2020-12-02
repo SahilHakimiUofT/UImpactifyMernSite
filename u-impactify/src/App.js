@@ -22,7 +22,8 @@ import InitiativeList from './components/InitiativeList/IniativeList';
 import InitiativeDetails from './components/InitiativeDetails/InitiativeDetails';
 import EditCourse from './components/Course/editCourse';
 import CourseDetail from './components/Learner/CourseDetailView/CourseDetail';
-import allClasses from './components/Learner/MyClassesView/MyClassesList'
+import allClasses from './components/Learner/MyClassesView/MyClassesList';
+import AllPosts from './components/AllPosts/allposts'
 
 const DashboardRoute = () => {
   const { userType } = React.useContext(AuthContext);
@@ -57,6 +58,7 @@ class App extends Component {
                         <PrivateRoute path="/profile" exact component={Profile}/>
                         <PrivateRoute path="/editcourse/:courseid" exact component={EditCourse}/>
                         <Route path="/opportunities" exact component={Opportunities}/>
+                        <PrivateRoute path="/forum" exact component={AllPosts}/>
                         <PrivateRoute path="/our-opportunities" exact component={OrgOpportunities}/>
                         <PrivateRoute path="/add_position" exact component={AddPositions}/>
                         <Route path="/initiatives" exact component={InitiativeList} />
