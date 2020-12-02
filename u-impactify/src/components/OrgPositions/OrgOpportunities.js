@@ -16,6 +16,7 @@ import { useHistory } from "react-router-dom";
 import { SERVER_BASE_ADDRESS } from '../../helpers/constants'
 import Navbar from '../SocialInitiative/socialInitNavbar.component.js';
 import './OrgPositions.css'
+import { DeleteRequest, PostRequest } from '../../helpers/httprequests';
 //import SearchForm from './SearchForm.js';
 
 const ApplicationDialog = (props) => {
@@ -26,19 +27,61 @@ const ApplicationDialog = (props) => {
     setCurrentApplication,
     currentPosition,
     setCurrentPosition,
+    positions,
+    dispatch
   } = props;
 
   const { applicant = {} } = currentApplication || {}
 
   function applyDialogAction(accepted, action) {
     setDialogOpen(false);
+    var mailInfo = {
+      email: {type: String},
+      subject: {type: String},
+      text: {type: String}
+    }
+    if (accepted && action) {
+      deleteApplication()
+      mailInfo = {
+        email: applicant.email,
+        subject: 'Hired for ' + currentPosition.positionTitle + ' at ' + currentPosition.organization,
+        text: 'Congratulations you have been hired for ' + currentPosition.positionTitle + ' at ' + currentPosition.organization 
+              + '. The organzation will be contacting you for further instructions on the process'
+      }
+      PostRequest('email/', mailInfo);
+      mailInfo = {
+        email: currentPosition.orgemail,
+        subject: 'Confirmation of hiring ' + applicant.firstName + ' ' + applicant.lastName + ' for ' + currentPosition.positionTitle,
+        text: 'This to confirm that you have hired ' + applicant.firstName + ' ' + applicant.lastName + ' for ' + currentPosition.positionTitle 
+              + ". Please follow up with the applicant using email: " + applicant.email + ' for further instructions'
+      }
+      PostRequest('email/', mailInfo);
+    } else if (!accepted && action) {
+      deleteApplication()
+      mailInfo = {
+        email: applicant.email,
+        subject: 'Rejected for ' + currentPosition.positionTitle + ' at ' + currentPosition.organization,
+        text: 'Sorry you have been rejected for ' + currentPosition.positionTitle + ' at ' + currentPosition.organization + '.'
+      }
+      PostRequest('email/', mailInfo);
+      mailInfo = {
+        email: currentPosition.orgemail,
+        subject: 'Confirmation of rejecting ' + applicant.firstName + ' ' + applicant.lastName + ' for ' + currentPosition.positionTitle,
+        text: 'This to confirm that you have rejected ' + applicant.firstName + ' ' + applicant.lastName + ' for' + currentPosition.positionTitle + '.'
+      }
+      PostRequest('email/', mailInfo);
+    }
     setCurrentApplication(null);
     setCurrentPosition('');
-    if (accepted && action) {
-      alert('Yay! Hired')
-    } else if (!accepted && action) {
-      alert('Oh no! Rejected')
-    }
+  }
+
+  function deleteApplication() {
+    let positionIndex = positions.indexOf(currentPosition);
+    currentPosition.applications = currentPosition.applications.filter(app => app._id !== currentApplication._id)
+    setCurrentPosition(currentPosition)
+    positions[positionIndex] = currentPosition
+    dispatch({ type: 'get-data', payload: { positions: positions } });
+    DeleteRequest('applications/delete/' + currentApplication._id);
   }
 
   const hasResume = !!currentApplication?.resumeId;
@@ -46,7 +89,7 @@ const ApplicationDialog = (props) => {
 
   return (
     <Dialog onClose={() => applyDialogAction(false, false)} open={dialogOpen}>
-      <DialogTitle id="form-dialog-title">Position: {currentPosition}</DialogTitle>
+      <DialogTitle id="form-dialog-title">Position: {currentPosition.positionTitle}</DialogTitle>
       <DialogContent>
         <Divider />
         <Grid container direction='column' spacing={2} className='applicant-info'>
@@ -180,7 +223,7 @@ export default function OrgOpportunities() {
 
   const [params, setParams] = useState({})
   const [page, setPage] = useState(1)
-  const { positions, loading, error, hasNextPage } = useFetchOrgPositions(params, page);
+  const { state: {positions, loading, error, hasNextPage}, dispatch } = useFetchOrgPositions(params, page);
 
   const [dialogOpen, setDialogOpen] = useState(false);
   const [currentApplication, setCurrentApplication] = useState(null);
@@ -213,16 +256,15 @@ export default function OrgOpportunities() {
         </Grid>
         <Grid xs container direction="column">
           {loading && <h1>Loading...</h1>}
-
           {positions.map(position => {
             return (
               <PositionCom
-                key={position.id}
+                key={position._id}
                 position={position}
                 openApplicationDialog={(application) => {
                   console.log(application)
                   setCurrentApplication(application);
-                  setCurrentPosition(position.positionTitle);
+                  setCurrentPosition(position);
                   setDialogOpen(true);
                 }}
               />
@@ -237,6 +279,8 @@ export default function OrgOpportunities() {
         setCurrentApplication={setCurrentApplication}
         currentPosition={currentPosition}
         setCurrentPosition={setCurrentPosition}
+        positions={positions}
+        dispatch={dispatch}
       />
     </Grid>
   )

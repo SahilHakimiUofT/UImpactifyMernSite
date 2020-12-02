@@ -102,6 +102,9 @@ app.use('/applications', applicationRouter)
 const postRouter = require('./routes/posts');
 app.use('/posts', postRouter)
 
+const emailRouter = require('./routes/email');
+app.use('/email', emailRouter);
+
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });

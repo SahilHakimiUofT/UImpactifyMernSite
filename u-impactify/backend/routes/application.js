@@ -28,4 +28,19 @@ router.route('/add').post((req, res) => {
     })
 });
 
+router.route('/delete/:id').delete((req, res) => {
+  Application.findByIdAndDelete(req.params.id)
+    .then(application => {
+      Position.findById(application.position)
+        .then(position => {
+          position.applications = position.applications.filter(app => !app.equals(application._id));
+          console.log(application);
+          console.log(position);
+          position.save()
+            .then(() => res.json('Application Deleted'))
+        })
+    })
+    .catch(err => res.status(400).json('Error: ' + err))
+})
+
 module.exports = router

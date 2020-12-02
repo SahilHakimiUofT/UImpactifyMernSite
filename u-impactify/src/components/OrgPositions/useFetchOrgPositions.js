@@ -71,5 +71,5 @@ export default function useFetchOrgPositions (params, page) {
         }
     }, [params, page])
     
-    return state
+    return {state, dispatch}
 }
