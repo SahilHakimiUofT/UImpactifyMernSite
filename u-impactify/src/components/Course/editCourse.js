@@ -12,7 +12,9 @@ import {
   import { navbarItems } from '../Consultant/navbarItems.js';
   import logo from '../../images/UImpactify-logo.png';
   import { Link } from 'react-router-dom';
-  import moment from 'moment'
+  import moment from 'moment';
+  import './editCourse.css';
+  
 
 export default class EditCourse extends Component{
     constructor(props){
@@ -45,38 +47,38 @@ export default class EditCourse extends Component{
            
           }
     }
+
+    setVariables(res){
+       var outline = res.data.outline;
+       var topicsInit = []
+       for(var i = 0; i<outline.length;i++){
+               topicsInit.push(outline[i]['topic'])
+       }
+       {this.setState({
+        name:res.data.name,
+        prereq:res.data.preReq,
+        preqfor:res.data.preReqFor,
+        description:res.data.description,
+        outline:res.data.outline,
+        startDate:new Date(res.data.startDate),
+
+        endDate: new Date(res.data.endDate),
+        difficultyLevel: res.data.difficultyLevel,
+        pictureUrl: res.data.pictureUrl ,
+        topics:topicsInit
+       
+      })
+
+ 
+}
+
+
+
+    }
    
       componentDidMount () {
           GetRequest('courses/'+this.props.match.params.courseid)
-          .then(res => {this.setState({
-            name:res.data.name,
-            prereq:res.data.preReq,
-            preqfor:res.data.preReqFor,
-            description:res.data.description,
-            outline:res.data.outline,
-            startDate:new Date(res.data.startDate),
-
-            endDate: new Date(res.data.endDate),
-            difficultyLevel: res.data.difficultyLevel,
-            pictureUrl: res.data.pictureUrl 
-           
-          })
-
-     
-    })
-    setTimeout(() => {
-        var topicsInit = []
-        for(var i = 0; i<this.state.outline.length;i++){
-                topicsInit.push(this.state.outline[i]['topic'])
-        }
-        this.setState({topics:topicsInit})
-      }, 100);
-
-      var userId = this.context.currentUser.email
-      GetRequest('users/'+userId)
-      .then(res => {this.setState({instructorName:userId})
-
-      })
+          .then(res => this.setVariables(res))
 
 
     }
@@ -325,7 +327,11 @@ export default class EditCourse extends Component{
                             <br/>
                             <button type = "button" onClick = {this.updateDatabase} id = "submitButton" className="btn btn-lg btn-primary">Save</button>
                             <button type="button" id = "discardButton" className="btn btn-lg btn-primary" onClick = {this.cancelCourse}>Discard Changes</button>
-
+                            <br></br>
+                           
+                           
+                            <Link to = {`/announcement/${encodeURIComponent(this.props.match.params.courseid)}`}>
+                            <button type = "button" id = "announceButton" className="btn btn-lg btn-primary">Create Announcement</button></Link>
                                 </div>
                                             </div>
                                         </form>
