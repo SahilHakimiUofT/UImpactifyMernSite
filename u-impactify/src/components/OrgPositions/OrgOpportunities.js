@@ -13,7 +13,7 @@ import useFetchOrgPositions from './useFetchOrgPositions';
 import PositionCom from './OrgPosition.component'
 import PositionsPagination from '../Opportunities/PositionsPagination';
 import { useHistory } from "react-router-dom";
-import { SERVER_BASE_ADDRESS } from '../../helpers/constants'
+import { SERVER_BASE_ADDRESS, DEFAULT_PROFILE_PIC } from '../../helpers/constants'
 import Navbar from '../SocialInitiative/socialInitNavbar.component.js';
 import './OrgPositions.css'
 import { DeleteRequest, PostRequest } from '../../helpers/httprequests';
@@ -99,7 +99,7 @@ const ApplicationDialog = (props) => {
           <Grid item container direction='row' alignItems='center' spacing={1}>
             <Grid item>
               <img
-                src={applicant.profilePicUrl}
+                src={applicant.profilePicUrl || DEFAULT_PROFILE_PIC}
                 alt={''}
                 className='profile-pic'
               />

@@ -1,12 +1,13 @@
-import React from 'react'
-import { Card, Badge } from 'react-bootstrap'
-import { Grid } from '@material-ui/core'
-import './OrgPositions.css'
+import React from 'react';
+import { Card, Badge } from 'react-bootstrap';
+import { Grid } from '@material-ui/core';
+import './OrgPositions.css';
+import { DEFAULT_PROFILE_PIC } from '../../helpers/constants';
 
 const Application = ({ application, openApplicationDialog }) => {
   return (
     <img
-      src={application.applicant.profilePicUrl}
+      src={application.applicant.profilePicUrl || DEFAULT_PROFILE_PIC}
       alt={''}
       style={{ width: '100px', height: '100px' }}
       onClick={() => openApplicationDialog(application)}
