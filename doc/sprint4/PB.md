@@ -18,6 +18,7 @@ We will use the fibonacci numbers as possible point values
 14. As a social organization, I should be able to hire/reject applicant to my positions
     * Organization can hire or reject applicants to their positions
     * Hiring or rejecting an applicant removes them from the list of applicant
+    * Hiring sends an email notifying the applicant
 16. As a user, I want to be able to look up the calendar and see any commitments on the specific day and hour so that I can have a better plan and complete my tasks on time
     * user is able to see their calendar
     * user is able to see their commitments on the calendar
