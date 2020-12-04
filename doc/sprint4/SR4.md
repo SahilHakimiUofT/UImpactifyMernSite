@@ -38,7 +38,6 @@ Every teammate worked on an individual user story while also helping others if n
 - TBD-17 - See Applicant Details
 - TBD-21 - Hire and Reject Applicants 
 - TBD-9 - Ask Questions about courses
-- TBD-13 - Wishlist a course
 
 ## New Practices
 Since this was the conclusion of the sprints, there are no new practices to introduce however, going forward we should take what was discusses previously and continue to work on them.

@@ -7,18 +7,6 @@
 We will use the fibonacci numbers as possible point values
 
 ## User Stories
-6. As a learner, I want to be able to drop a course I already enrolled in so that I can better allocate my time on something else that interests me or due to personal reasons
-    * learner can remove a course they are enrolled in (drop a course)
-11. As a consultant, I want to be able to make announcements regarding the course so that students can be up to date with major deadlines and information about the course
-    * consultant is able to make announcements
-    * learners should be able to see the announcement
-13. As a social organization, I should be able to see details about those who applied to my positions
-    * Organization can who applied to their position
-    * Organization can see profile/resume/cover letter of applicant
-14. As a social organization, I should be able to hire/reject applicant to my positions
-    * Organization can hire or reject applicants to their positions
-    * Hiring or rejecting an applicant removes them from the list of applicant
-    * Hiring or rejecting sends an email notifying the applicant
 16. As a user, I want to be able to look up the calendar and see any commitments on the specific day and hour so that I can have a better plan and complete my tasks on time
     * user is able to see their calendar
     * user is able to see their commitments on the calendar
@@ -34,10 +22,6 @@ We will use the fibonacci numbers as possible point values
     * learner can add comments for courses
     * learner can rate courses
     * learner can see rating and comments from other learners
-20. As a learner, I want to be able to ask questions about a course so that I can get more information about the course
-    * learner is able to post questions about a course
-    * learner is able to see the response to their questions
-    * learner is able to see all questions and responses for the course
 
 ## Completed User Stories
 ### Sprint 1
@@ -86,3 +70,21 @@ We will use the fibonacci numbers as possible point values
     * learner should be able to upload resume and cover letter with their application
 64. As a social organization, I want to able to see the positions that I have posted
     * organization can see any positions that they have posted
+
+### Sprint 4
+6. As a learner, I want to be able to drop a course I already enrolled in so that I can better allocate my time on something else that interests me or due to personal reasons
+    * learner can remove a course they are enrolled in (drop a course)
+11. As a consultant, I want to be able to make announcements regarding the course so that students can be up to date with major deadlines and information about the course
+    * consultant is able to make announcements that send via email
+    * learners should be able to check their email to see the announcement
+13. As a social organization, I should be able to see details about those who applied to my positions
+    * Organization can who applied to their position
+    * Organization can see profile/resume/cover letter of applicant
+14. As a social organization, I should be able to hire/reject applicant to my positions
+    * Organization can hire or reject applicants to their positions
+    * Hiring or rejecting an applicant removes them from the list of applicant
+    * Hiring or rejecting sends an email notifying the applicant
+20. As a learner, I want to be able to ask questions about a course so that I can get more information about the course
+    * learner is able to post questions about a course
+    * learner is able to see the response to their questions
+    * learner is able to see all questions and responses for the course
