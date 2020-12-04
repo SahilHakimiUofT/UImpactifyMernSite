@@ -13,7 +13,7 @@ import useFetchOrgPositions from './useFetchOrgPositions';
 import PositionCom from './OrgPosition.component'
 import PositionsPagination from '../Opportunities/PositionsPagination';
 import { useHistory } from "react-router-dom";
-import { SERVER_BASE_ADDRESS } from '../../helpers/constants'
+import { SERVER_BASE_ADDRESS, DEFAULT_PROFILE_PIC } from '../../helpers/constants'
 import Navbar from '../SocialInitiative/socialInitNavbar.component.js';
 import './OrgPositions.css'
 import { DeleteRequest, PostRequest } from '../../helpers/httprequests';
@@ -40,20 +40,21 @@ const ApplicationDialog = (props) => {
       subject: {type: String},
       text: {type: String}
     }
+    let signoff = "Sincerely,\nU-Impactify Hiring"
     if (accepted && action) {
       deleteApplication()
       mailInfo = {
         email: applicant.email,
         subject: 'Hired for ' + currentPosition.positionTitle + ' at ' + currentPosition.organization,
-        text: 'Congratulations you have been hired for ' + currentPosition.positionTitle + ' at ' + currentPosition.organization 
-              + '. The organzation will be contacting you for further instructions on the process'
+        text: 'Hi,\nCongratulations you have been hired for ' + currentPosition.positionTitle + ' at ' + currentPosition.organization 
+              + '. The organzation will be contacting you for further instructions on the process\n\n' + signoff
       }
       PostRequest('email/', mailInfo);
       mailInfo = {
         email: currentPosition.orgemail,
         subject: 'Confirmation of hiring ' + applicant.firstName + ' ' + applicant.lastName + ' for ' + currentPosition.positionTitle,
-        text: 'This to confirm that you have hired ' + applicant.firstName + ' ' + applicant.lastName + ' for ' + currentPosition.positionTitle 
-              + ". Please follow up with the applicant using email: " + applicant.email + ' for further instructions'
+        text: 'Hi,\nThis to confirm that you have hired ' + applicant.firstName + ' ' + applicant.lastName + ' for ' + currentPosition.positionTitle 
+              + ". Please follow up with the applicant using email: " + applicant.email + ' for further instructions\n\n' + signoff
       }
       PostRequest('email/', mailInfo);
     } else if (!accepted && action) {
@@ -61,13 +62,13 @@ const ApplicationDialog = (props) => {
       mailInfo = {
         email: applicant.email,
         subject: 'Rejected for ' + currentPosition.positionTitle + ' at ' + currentPosition.organization,
-        text: 'Sorry you have been rejected for ' + currentPosition.positionTitle + ' at ' + currentPosition.organization + '.'
+        text: 'Hi,\nSorry you have been rejected for ' + currentPosition.positionTitle + ' at ' + currentPosition.organization + '.\n\n' + signoff
       }
       PostRequest('email/', mailInfo);
       mailInfo = {
         email: currentPosition.orgemail,
         subject: 'Confirmation of rejecting ' + applicant.firstName + ' ' + applicant.lastName + ' for ' + currentPosition.positionTitle,
-        text: 'This to confirm that you have rejected ' + applicant.firstName + ' ' + applicant.lastName + ' for' + currentPosition.positionTitle + '.'
+        text: 'Hi,\nThis to confirm that you have rejected ' + applicant.firstName + ' ' + applicant.lastName + ' for ' + currentPosition.positionTitle + '.\n\n' + signoff
       }
       PostRequest('email/', mailInfo);
     }
@@ -99,7 +100,7 @@ const ApplicationDialog = (props) => {
           <Grid item container direction='row' alignItems='center' spacing={1}>
             <Grid item>
               <img
-                src={applicant.profilePicUrl}
+                src={applicant.profilePicUrl || DEFAULT_PROFILE_PIC}
                 alt={''}
                 className='profile-pic'
               />
