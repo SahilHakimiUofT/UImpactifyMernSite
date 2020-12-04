@@ -26,6 +26,7 @@ import CourseDetail from './components/Learner/CourseDetailView/CourseDetail';
 import allClasses from './components/Learner/MyClassesView/MyClassesList';
 import AllPosts from './components/AllPosts/allposts'
 import IndividualPost from './components/AllPosts/IndividualPost/IndividualPost';
+import CoursePage from './components/Learner/MyClassesView/CoursePage'
 
 const DashboardRoute = () => {
   const { userType } = React.useContext(AuthContext);
@@ -67,7 +68,8 @@ class App extends Component {
                         <PrivateRoute path="/add_position" exact component={AddPositions}/>
                         <Route path="/initiatives" exact component={InitiativeList} />
                         <Route path="/initiatives/:id" exact component={InitiativeDetails} />
-                        <Route path="/my-classes" exact component={allClasses} />
+                        <PrivateRoute path="/my-classes" exact component={allClasses} />
+                        <PrivateRoute path="/my-classes/:courseid" exact component={CoursePage} />
                         <DashboardRoute />
                     </div>
                 </Router>

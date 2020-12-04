@@ -30,15 +30,11 @@ const ClassesCard = ({ classes }) => (
       {classes.courseId.name}
     </Grid>
     <Grid item xs>
-      <Link to={`/all-courses/${encodeURIComponent(classes.courseId._id)}`}>
+      <Link to={`/my-classes/${encodeURIComponent(classes.courseId._id)}`}>
         <button className='btn btn-outline-primary learn-more-btn'>
           <b>{text.openButton}</b>
         </button>
       </Link>
-        <button className='btn btn-outline-primary drop-btn' >
-                    <b>Drop Course</b>
-        </button>
-      
     </Grid>
   </Grid>
 )
@@ -96,6 +92,7 @@ export default class AllEnrolled extends Component {
       this.setState({
         datas:response.data.enrollCourse
       })
+      console.log(this.state.datas, "$$$infoInDatas")
     })
     .catch(function(error) {
       console.log(error);

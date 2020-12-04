@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { GetRequest, PutRequest } from '../../../helpers/httprequests';
 import PageWrapper from '../../PageWrapper/PageWrapper';
 import { Grid } from '@material-ui/core';
-import './CourseDetail.css'
+import '../CourseDetailView/CourseDetail.css'
 import moment from 'moment';
 import { AuthContext } from '../../../Auth'
 import {
@@ -11,7 +11,7 @@ import {
   } from "../../../helpers/constants";
 
 
-export default class CouseDetail extends Component{
+export default class CoursePage extends Component{
     constructor(props) {
         super(props);
         this.updateDatabase = this.updateDatabase.bind(this);
@@ -128,16 +128,10 @@ export default class CouseDetail extends Component{
     }
 
     updateEnrollCourse(e) {
-            const newEnrollCourse = {'courseId': this.state.courseId}
-
-            console.log(newEnrollCourse, "$$$$$$$$$newEnrollCourse")
-       
-            this.setState({
-                enrollCourse:[...this.state.enrollCourse, newEnrollCourse]
-            });
-            
-            console.log(this.state.enrollCourse, "$$$$$$$$enrollCourse")
-          
+        this.setState(prevState => ({
+            enrollCourse: prevState.enrollCourse.filter(course => course.courseId._id !== e)
+        }))
+        console.log(this.state.enrollCourse, "$$$newenrollCourseArray")  
     }
 
     CourseDetailBase(){
@@ -150,9 +144,9 @@ export default class CouseDetail extends Component{
             </Grid>
             <Grid item>
                 <button className='btn btn-outline-primary enroll-btn' onClick={this.updateDatabase}>
-                    <b>Enroll Course</b>
+                    <b>Drop Course</b>
                 </button>
-                       Double Click to Enroll the Course
+                       Double Click to Drop the Course
             </Grid>
             <hr />
             <Grid item>
@@ -216,5 +210,5 @@ export default class CouseDetail extends Component{
         )
       }
 }
-CouseDetail.contextType = AuthContext;
+CoursePage.contextType = AuthContext;
 
