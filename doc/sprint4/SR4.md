@@ -46,6 +46,6 @@ Since this was the conclusion of the sprints, there are no new practices to intr
 Once again, an issue that occurred during this sprint was that some tasks were dependent on other which meant that some members were required to wait before they could start on their tasks.
 
 ## Best/Worst Experience
-The best experience in this sprint was that since it was the last sprint we finally got to see our finished product and all the work the team had done throughtout the semester and to see all the components and hardwork integrated into the project and seeing it functioning as we envisioned was the most satisfying experinces throughout this course.
+The best experience in this sprint was that since it was the last sprint we finally got to see our finished product and all the work the team had done throughtout the semester and to see all the components and hardwork integrated into the project and seeing it functioning as we envisioned was the most satisfying experience throughout this course.
 
 This being the near the end of the semester meant that a lot of members were under pressure with other assignments an studying for exams which caused a lot of stress.
