@@ -14,7 +14,7 @@
 | Prof Ilir | |
 
 ## Tasks This Sprint
-All tasks that were selected for this sprint were successfully completed except TBD-13(Wishlist).
+All tasks that were selected for this sprint were successfully completed except TBD-13 (Wishlist for Learners) since only the frontend was done to display a test data of courses and not the backend for the wishlist button and obtaining the real wishlist courses from the database, so it has been moved to the product backlog.
 
 This has been reflected on Jira.
 
