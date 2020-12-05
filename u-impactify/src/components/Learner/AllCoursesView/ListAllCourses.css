@@ -21,13 +21,6 @@ button.learn-more-btn:hover {
   color: #a78ec3;
   background-color: white !important;
 }
-
-button.wishlist-btn:hover {
-  border-width: 2px;
-  border-color: #a78ec3;
-  color: #a78ec3;
-  background-color: white !important;
-}
   
 .course-image {
   max-width: 100%;
@@ -41,12 +34,6 @@ button.wishlist-btn:hover {
 .learn-more-btn {
   border-color: #a78ec3;
   color: #a78ec3;
-}
-
-.wishlist-btn {
-  border-color: #a78ec3;
-  color: #a78ec3;
-  margin-left: 20px;
 }
   
 .search {

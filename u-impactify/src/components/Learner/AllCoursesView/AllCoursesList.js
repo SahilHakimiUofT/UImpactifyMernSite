@@ -33,9 +33,6 @@ const AllCoursesCard = ({ course }) => (
           <b>{text.learnMoreButton}</b>
         </button>
       </Link>
-      <button className='btn btn-outline-primary wishlist-btn' >
-        <b>Wishlist</b>
-      </button>
     </Grid>
   </Grid>
 )

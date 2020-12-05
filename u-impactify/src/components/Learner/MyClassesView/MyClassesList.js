@@ -6,7 +6,6 @@ import { substringIgnoreCase } from '../../../helpers/helperfunctions';
 import { text } from './MyClassesList.text';
 import SearchBar from '../../SearchBar/SearchBar';
 import PageWrapper from '../../PageWrapper/PageWrapper'
-import WishList from '../Wishlist/wishList'
 import { GetRequest } from '../../../helpers/httprequests';
 import { AuthContext } from '../../../Auth';
 
@@ -71,7 +70,6 @@ const ClassesListContent = ({ courses = [] }) => {
 const AllClassesList = ({ courses }) => (
   <PageWrapper>
     <ClassesListContent courses={courses} />
-    <WishList />
   </PageWrapper>
 )
 
