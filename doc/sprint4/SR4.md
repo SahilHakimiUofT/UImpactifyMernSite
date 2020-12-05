@@ -14,7 +14,7 @@
 | Prof Ilir | |
 
 ## Tasks This Sprint
-All tasks that were selected for this sprint were successfully completed.
+All tasks that were selected for this sprint were successfully completed except TBD-13(Wishlist).
 
 This has been reflected on Jira.
 
