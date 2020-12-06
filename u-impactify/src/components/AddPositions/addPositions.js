@@ -14,20 +14,25 @@ export default function AddPositions(){
     const { setUserType } = React.useContext(AuthContext);
 
     return(
-        <Grid classname="body">
-        <Grid container direction = "row" className="my-4">
-            <Grid item>
-                <Navbar />
-            </Grid>
-            <Grid xs container direction="column" className="form">
+        <div className="main">
+            <div className="content-wrap">
+            <div className='top-nav'>
+              <h1 className = "dashboard">Add Positions</h1>
+            </div>
+              <Grid container direction="row">
                 <Grid item>
-                    <AddPositionForm />
+                  <Navbar/>
                 </Grid>
-            </Grid>
-        </Grid>
-        <Grid container direction="row" className="bottom">
-            <Footer />
-        </Grid>
-        </Grid>
+                <Grid xs container direction="row">
+                <Grid item>
+                    <div className="addposform">
+                        <AddPositionForm />
+                    </div>
+                </Grid>
+                </Grid>
+              </Grid>
+              <Footer/>
+            </div>
+          </div>
     )
 }

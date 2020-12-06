@@ -8,10 +8,7 @@ export default class Navbar extends Component {
     render() {
         return (
             <body>
-                <div className='top-nav'>
-                    <h1 className = "dashboard">Add Positions</h1>
-                </div>
-                <nav className='menu-pos'>
+                <nav className='menu-pos-add-org'>
                     <ul className='menu-items'>
                         <li>
                             <img src={logo} className ='logo' alt="Logo" />

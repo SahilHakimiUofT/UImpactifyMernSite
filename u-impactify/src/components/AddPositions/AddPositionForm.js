@@ -44,6 +44,8 @@ export function AddPositionForm(){
             {
                 alert(error);
             }
+
+            alert("Position Successfully Added")
     });
 
     return(
