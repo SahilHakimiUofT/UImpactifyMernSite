@@ -20,6 +20,7 @@
 
 .padding {
    padding: 10px 0px 0px 10px;
+   background-color: #ffffff;
  }
 
  .small-image {
@@ -36,7 +37,7 @@
  }
 
  .padding{
-   background-color: #e6ccb3;
+   background-color: #ffffff;
  }
  
  .profile-image {
