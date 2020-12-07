@@ -3,6 +3,6 @@ input:focus, textarea:focus, select:focus {
 }
 
 .textbox {
-  max-width: 150px;
+  min-width: 300px;
   display: inline;
 }

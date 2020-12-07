@@ -164,9 +164,9 @@ export default class Profile extends Component {
 
   generalInfo() {
     return (
-      <Grid item className="padding">
-        <img className="small-image" src={this.state.imageUrl || DEFAULT_PROFILE_PIC} alt="" />
-        <h4 className="info-title">{this.state.firstName === "" && this.state.lastName == "" ? "name not set" : this.state.firstName + " " + this.state.lastName}</h4>
+      <Grid item className="profile-padding">
+        <img className="profile-small-image" src={this.state.imageUrl || DEFAULT_PROFILE_PIC} alt="" />
+        <h4 className="profile-info-title">{this.state.firstName === "" && this.state.lastName == "" ? "name not set" : this.state.firstName + " " + this.state.lastName}</h4>
         <hr/>
         <h5>Education</h5>
         <Editable content={this.state.education} updateField={this.updateEducation}/>
@@ -187,7 +187,7 @@ export default class Profile extends Component {
 
   personalInfo() {
     return (
-      <div className="padding">
+      <div className="profile-padding">
         <h4>Personal Information</h4>
         <hr/>
         <Grid container direction="row" justify="center">
@@ -202,12 +202,12 @@ export default class Profile extends Component {
             <Grid item container alignItems='center'>
               <Grid item>
                 <img
-                  className="profile-image"
+                  className="profile-component-image"
                   src={this.state.imageUrl || DEFAULT_PROFILE_PIC}
                   alt=""
                 />
               </Grid>
-              <Grid item className="buttons">
+              <Grid item className="profile-buttons">
                 <input
                   type="file"
                   id="BtnBrowseHidden"
@@ -243,7 +243,7 @@ export default class Profile extends Component {
 
   render() {
     return (
-      <div className="main">
+      <div className="profile-main">
         <div className="content-wrap">
           <Grid container direction="row">
             <Grid item>
@@ -252,7 +252,7 @@ export default class Profile extends Component {
             <Grid xs container direction="column">
               {this.generalInfo()}
               <Grid item>
-                <button className="btn btn-primary btn-save" onClick={this.updateDatabase}>Save</button>
+                <button className="btn btn-primary profile-btn-save" onClick={this.updateDatabase}>Save</button>
               </Grid>
             </Grid>
             <Grid xs container direction="column">

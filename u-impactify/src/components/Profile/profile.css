@@ -1,14 +1,14 @@
-.main{
+.profile-main{
   min-height: 100vh;
   position: relative;
   min-width: 960px;
 }
 
-.padding {
+.profile-padding {
   padding: 10px 0px 0px 10px;
 }
 
-.small-image {
+.profile-small-image {
   width: 50px;
   height: 50px;
   margin-right: 10px;
@@ -16,11 +16,11 @@
   display: inline;
 }
 
-.info-title {
+.profile-info-title {
   display: inline;
 }
 
-.profile-image {
+.profile-component-image {
   border: 1px;
   width: 100px;
   height: 100px;
@@ -29,20 +29,20 @@
   vertical-align: top;
 }
 
-.buttons {
+.profile-buttons {
   display: inline-grid;
 }
 
-.action-btn{
+.profile-action-btn{
   margin-left: 30px;
   padding: 2px;
 }
 
-.below {
+.profile-below {
   margin-top: 15px;
 }
 
-.btn-save {
+.profile-btn-save {
   margin-top: 100px;
   margin-left: 5px;
 }

@@ -21,7 +21,7 @@ export default function Editable(props) {
     setEdit(!edit)
   }
 
-  const onSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setEdit(false)
     setValue(text)
@@ -30,11 +30,11 @@ export default function Editable(props) {
 
   const editView = () => {
     return (
-      <form onSubmit={onSubmit} className="form-group">
-        <input type='text' defaultValue={value} onChange={(e) => setText(e.target.value)} className="form-control textbox"/>
+      <div>
+        <input type='text' defaultValue={value} onChange={(e) => setText(e.target.value)} className="textbox"/>
         <button className="btn btn-secondary" onClick={changeEditMode}>X</button>
-        <input type='submit' value='OK' className="btn btn-primary"/>
-      </form>
+        <button className="btn btn-primary" onClick={handleSubmit}>OK</button>
+      </div>
     )
   }
 
